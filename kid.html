@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <style>
+        *{
+    box-sizing: border-box;
+    /* width: 100%; */
+    }
+    html{
+        width: 95%;
+    }
+    ul{
+    list-style: none;
+    }
+    a{
+    text-decoration: none;
+    }
+    body{
+    font: 20px 'Sulphur Point', sans-serif;
+    /* color: #fff; */
+    }
+    .mainboss{
+        width: 80%;
+    }
+    
+    #menu{
+            width: 35px;
+            height: 30px;
+            margin: 30px 0px 20px 20px;
+            cursor: pointer;
+        }
+        .bar{
+            height: 5px;
+            width: 100%;
+            background-color: black;
+            display: block;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        #bar1{
+            transform: translateY(-4px);
+        }
+        #bar3{
+            transform: translateY(4px);
+        }
+        .nav li a {
+            color: black;
+            text-decoration: none;
+        }
+        .nav li a:hover{
+            border: 1px solid white;
+        }
+        .nav li{
+            list-style: none;
+        }
+        .nav{
+            margin: 0 20px;
+            padding: 0;
+            display: none;
+            /* display: flex; */
+            /* justify-content: space-evenly; */
+            transition: 1s ease;
+            
+        }
+        .boss{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            
+        }
+        #women{
+            margin-left: 0px;
+        }
+        #men{
+            margin-left: 29px;
+        }
+        #kids{
+            margin-left: 26px;
+        }
+        #beauty{
+            margin-left: 10px;
+        }
+        .mendrop{
+            display: none;
+        }
+        .kiddrop{
+            display: none;
+        }
+        .beautydrop{
+            display: none;
+        }
+        .icon .bar{
+            background-color: #fff;
+        }
+        .icon #bar1{
+            transform: translateY(4px) rotate(-45deg);
+        }
+        .icon #bar3{
+            transform: translateY(-6px) rotate(45deg);
+        }
+        .icon #bar2{
+            opacity: 0;
+        }
+        .change{
+            background-color: #fff;
+            height: 100vh;
+            margin: 0;
+            position: absolute;
+            font-size: 20px;
+            top: 0;
+            z-index: -100;
+            width: 33%;
+            display: flex;
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* flex-direction: row; */
+            justify-content: center;
+        }
+        .dropdown ul{
+            list-style: none;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+        .dropdown li{
+            /* float: left; */
+            position: relative;
+            width: auto;
+
+        }
+        .dropdown a{
+            display: block;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 15px 10px;
+            transition: all 0.55s ease;
+        }
+        .dropdown li:hover{
+            background-color: white;
+        }
+        .ulclass{
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 35px;
+            visibility: hidden;
+            z-index: 1;
+        }
+        li:hover ul.ulclass{
+            opacity: 1;
+            top: 80px;
+            visibility: visible;
+        }
+        .ulclass li{
+            float: none;
+            width: 100%;
+        }
+        .ulclass a:hover{
+            background: rgb(239, 241, 244);
+        }
+        .ulclass a{
+            background-color: white;
+        }
+    .navbar1{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    margin-bottom: 50px;
+    background-color: white;
+    }
+    #home a{
+        color: black;
+    }
+    
+    .help{
+        width: 20%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .help a{
+        color: black;
+    }
+    .searchbar{
+        margin-left: 580px;
+        display: flex;
+    }
+    #search{
+        height: 21px;
+border: none;
+outline: none;
+border-bottom: 1px solid black;
+    }
+    #girl{
+        width: 50%;
+        margin-right: 26px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    #boy{
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    .kidimg img{
+        margin-top: 109px;
+        
+    }
+    .kidimg{
+        display: flex;
+        margin: auto;
+    }
+    .onegirl{
+        margin-top: 50px;
+       
+    }
+    .onegirl img{
+        width: 65%;
+    }
+    .onegirl >div {
+       margin-left: 31%;
+    }
+    #girlage{
+       margin-left: 222px;
+    }
+    #girldata{
+        padding-top: 50px;
+        display: grid;
+        width: 105%;
+        grid-template-columns: repeat(4,1fr);
+        gap: 30px 20px;
+    }
+    #girldata>div{
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        text-align: center;
+    }
+    #girldata img{
+        width: 100%;
+    }
+    #girldata p{
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: lightgrey;
+    }
+    #girldata button{
+        border-radius: 50px;
+        background-color: white;
+        outline: gray;
+        border: none;
+        
+    }
+
+    #girldata button:hover{
+        background-color: lightgray;
+    }
+    
+    .oneboy{
+        margin-top: 50px;
+       
+    }
+    .oneboy img{
+        width: 65%;
+    }
+    .oneboy >div {
+       margin-left: 31%;
+    }
+    #boyage{
+       margin-left: 222px;
+    }
+    #boydata{
+        
+        padding-top: 50px;
+        margin-left: 62px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 20px;
+        /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    }
+    #boydata img{
+        width: 100%;
+        /* height: 67%; */
+    }
+    #boy>div{
+        width: 10%;
+        
+    }
+    #boydata>div:nth-child(1){
+        /* width: 33%; */
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid blue; */
+    }
+    #boydata>div:nth-child(2){
+        /* width: 33%; */
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid green; */
+    }
+    #boydata>div:nth-child(3){
+        /* width: 33%; */
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid red; */
+    }
+    #boydata>div:nth-child(4){
+        /* margin-left: 50px; */
+        /* width: 33%; */
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid green; */
+    }
+    #boydata>div:nth-child(5){
+        /* width: 33%; */
+        /* margin-left: 50px; */
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid yellow; */
+    }
+    #boydata>div:nth-child(6){
+        /* width: 33%; */
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid black; */
+    }
+    #boydata>div:nth-child(7){
+        /* width: 33%; */
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid pink; */
+    }
+    #boydata>div:nth-child(8){
+        /* width: 33%; */
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;            /* border: 1px solid orangered; */
+    }
+    #boydata>div:nth-child(9){
+        /* width: 33%; */
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 4;
+            grid-row-end: 5;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;           
+    }
+    #boydata>div:nth-child(10){
+        /* width: 33%; */
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 4;
+            grid-row-end: 5;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+            /* border: 1px solid purple; */
+    }
+    #boydata p{
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: lightgrey;
+    }
+    #boydata button{
+        /* height: 10px; */
+        display: block;
+        margin: auto;
+        border-radius: 50px;
+        
+        background-color: white;
+    }
+    #boydata button:hover{
+        background-color: lightgray;
+    }
+    #boydata >div{
+        text-align: center;
+
+    }
+    .footer{
+        margin-top: 400px;
+        width: 50%;
+    }
+    #mail{
+        width: 60%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    .footer p{
+        /* margin-top: 20px; */
+        font-size: 10px;
+    }
+    .footer h4{
+        font-size: 20px;
+    }
+    .foot{
+        margin-top: 80px;
+    }
+    .social{
+        width: 60%;
+        margin-top: 150px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .last{
+        margin-top: 150px;
+        display: flex;
+    }
+    .last p{
+        font-size: 8px;
+    }
+    .last>div{
+        display: block;
+        margin: auto;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="mainbar">
+    <div class="navbar1">
+        <div id="navigation">
+            <div id="menu" onclick="onclickmenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+            <ul id="nav" class="nav">
+            <div class="boss">
+                <li><a href="./women.html" id="women">WOMEN</a>
+                    <div class="dropdown">
+                       <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BASICS</a></li>
+                        <li><a href="#">TROUSERS</a></li>
+                        <li><a href="#">BODYSUITS</a></li>
+                        <li><a href="#">DENIM EDITTREND</a></li>
+                        <li><a href="#">BEST SELLERSNEW</a></li>
+                        <li><a href="#">T-SHIRTS</a></li>
+                        <li><a href="#">JEANS</a></li>
+                        <li><a href="#">COATS</a></li>
+                        <li><a href="#">KNITWEAR</a></li>
+                       </ul>
+                    </div>
+                </li>
+                
+                <li><a href="./men.html" id="men">MEN</a>
+                    <div class="dropdown" >
+                        <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BEST SELLERSNEW</a></li>
+                        <li><a href="#">ZARA ORIGINS</a></li>
+                        <li><a href="#">ZARA ATHLETICZ</a></li>
+                        <li><a href="#">SUMMERY GARMENTSNEW</a></li>
+                        <li><a href="#">JEANS</a></li>
+                        <li><a href="#">SUITS</a></li>
+                        <li><a href="#">SHIRTS</a></li>
+                        <li><a href="#">TROUSERS</a></li>
+                        <li><a href="#">BLAZERS</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./kid.html" id="kids">KIDS</a>
+                 <div class="dropdown">
+                    <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BASICS</a></li>
+                        <li><a href="#">T-SHIRTS</a></li>
+                        <li><a href="#">SWEATSHIRTS</a></li>
+                        <li><a href="#">DRESSES | JUMPSUITS</a></li>
+                        <li><a href="#">SWIMWEAR</a></li>
+                        <li><a href="#">SKIRTS | BERMUDA SHORTS</a></li>
+                        <li><a href="#">LICENSES</a></li>
+                        <li><a href="#">SPORTSWEAR</a></li>
+                        <li><a href="#">SHIRTS | OVERSHIRTS</a></li>
+                    </ul>
+                 </div>
+                </li>
+                <li><a href="./beauty.html" id="beauty">BEAUTY</a>
+                   
+                </li>
+            </div>
+            
+        </div>
+        
+        <div class="logo" id="home"> <h1 ><a href="./home.html">ZARA</a></h1></div>
+            <div class="searchbar">
+                <input type="text" placeholder="Serach" id="search"> 
+               
+            </div>
+
+           
+             
+             <div class="help">
+                <a href="./login.html">LOGIN</a>
+                <a href="#">HELP</a>
+                <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>   
+             </div>
+           
+        
+        </div>
+
+    </div>
+   
+      
+</div>
+    
+    <div class="kidimg">
+        <img src="https://static.zara.net/photos///2023/V/M/3/p/0000/002/127/2/w/725/0000002127_15_1_1.jpg?ts=1676883054931" alt="" id="girl">
+        <img src="https://static.zara.net/photos///2023/V/0/3/p/1213/667/506/302/w/608/1213667506_15_1_1.jpg?ts=1675942535057" alt="" id="boy">
+    </div>
+
+    <div class="onegirl">
+
+        <div>
+        <p id="girlage">GIRLS 6-14 YEARS</p>
+        
+        <img src="https://static.zara.net/photos///2023/V/0/3/p/5431/627/251/102/w/608/5431627251_1_1_1.jpg?ts=1676558466630" alt="error">
+        </div>
+
+    </div>
+
+    <div id="girldata">
+
+    </div>
+
+    <div class="oneboy">
+
+        <div>
+            <p id="boyage">BOYS 6-14 YEARS</p>
+            <img src="https://static.zara.net/photos///2023/V/0/3/p/6208/723/250/305/w/608/6208723250_1_1_1.jpg?ts=1675765484586" alt="error">
+        </div>
+    </div>
+
+    <div id="boydata">
+
+
+    </div>
+
+
+    
+    <div class="footer">
+        <h4>JOIN OUR NEWSLETTER</h4>
+        <div class="foot">
+            <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS HERE" id="mail">
+        </div>
+        <div class="social">
+            <p>INSTAGRAM</p>
+            <p>FACEBOOK</p>
+            <p>TWITTER</p>
+            <p>PINTREST</p>
+            <p>YOUTUBE</p>
+            <p>SPOTIFY</p>
+        </div>
+    </div>
+
+    <div class="last">
+        <div>
+            <h6>HELP</h6>
+            <p>MY ZARA ACCOUNT</p>
+            <p>ITEMS SIZES</p>
+            <p>GIFT OPTIONS</p>
+            <p>SHIPPING</p>
+            <p>PAYMENT AND INVOICES</p>
+            <p>MY PURCHASES</p>
+            <p>EXCHANGE, RETURN</p>
+            <p>ZARA EXPERIENCE</p>
+        </div>
+        <div>
+            <h6>FOLLOW US</h6>
+            <p>NEWSLETTER</p>
+            <p>INSTAGRAM</p>
+            <p>FACEBOOK</p>
+            <p>TWITTER</p>
+            <p>PINTREST</p>
+            <p>YOUTUBE</p>
+        </div>
+        <div>
+            <h6>COMPANY</h6>
+            <p>ABUT US</p>
+            <p>JOIN LIFE</p>
+            <p>OFFICES</p>
+            <p>STORES</p>
+            <p>WORK WITH US</p>
+        </div>
+        <div>
+            <h6>POLICES</h6>
+            <p>PRIVACY POLICIES</p>
+            <p>PURCHASE CONDITION</p>
+            <p>GIFT CARD OPTIONS</p>
+            <p>COOKIE SETTINGS</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    function onclickmenu(){
+
+document.getElementById('menu').classList.toggle('icon');
+document.getElementById('nav').classList.toggle('change');
+}
+
+let girldata = document.getElementById('girldata')
+let boydata = document.getElementById('boydata')
+
+let incart1 = JSON.parse(localStorage.getItem('incart1'))
+  if(incart1 == null){
+    incart1 = []
+  }
+
+let girlapi = `https://mocki.io/v1/fc2a2d4b-e23b-40ab-91de-4cf4b30404f9`
+let boyapi = `https://mocki.io/v1/9df9a128-142d-4530-a4e0-c99f59f4cee0`
+
+
+
+
+
+datafetch()
+  async function datafetch(){
+
+try{
+
+    let res = await fetch(girlapi)
+    let data = await res.json()
+    console.log(data)
+    display2(data)
+}
+
+catch(error){
+    console.log(error)
+}
+}
+
+function display2(data){
+
+
+data.forEach((ele)=>{
+
+    let parent = document.createElement('div')
+    
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    let des = document.createElement('p')
+    des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    let mat = document.createElement('p')
+    mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+    
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    btn.addEventListener('click', ()=>{
+        if(check(ele)){
+            alert("Product Already in Cart");
+        }
+        else{
+            incart1.push({...ele, quantity:1});
+            localStorage.setItem("incart1", JSON.stringify(incart1));
+            alert("Product Added To Cart");
+        }
+
+    })
+
+    parent.append(img,name,des,price, mat, btn)
+    
+    girldata.append(parent)
+     })
+}
+
+
+
+
+datafetch2()
+  async function datafetch2(){
+
+    try{
+
+        let res2 = await fetch(boyapi)
+        let data2 = await res2.json()
+        // display2(data2)
+        display(data2)
+        // console.log(data2)
+    }
+
+    catch(error){
+        console.log(error)
+    }
+  }
+
+  
+
+  function display(data){
+
+
+data.forEach((ele)=>{
+//   ele.img
+    let parent = document.createElement('div')
+
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    let des = document.createElement('p')
+    des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    let mat = document.createElement('p')
+    mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+
+    btn.addEventListener('click', ()=>{
+        if(check(ele)){
+            alert("Product Already in Cart");
+        }
+        else{
+            incart1.push({...ele, quantity:1});
+            localStorage.setItem("incart1", JSON.stringify(incart1));
+            alert("Product Added To Cart");
+        }
+
+    })
+
+    parent.append(img,name,des,price, mat, btn)
+    
+    boydata.append(parent)
+     })
+}
+
+function check(ele){
+    for (let i = 0; i < incart1.length; i++) {
+        if (Number(incart1[i].kidid) == Number(ele.kidid)) {
+          return true;
+        }
+      }
+      return false;
+}
+  
+</script>
+</html>

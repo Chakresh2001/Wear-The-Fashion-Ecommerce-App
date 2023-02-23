@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <style>
+        *{
+    box-sizing: border-box;
+    /* width: 100%; */
+    }
+    html{
+        width: 95%;
+    }
+    ul{
+    list-style: none;
+    }
+    a{
+    text-decoration: none;
+    }
+    body{
+    font: 20px 'Sulphur Point', sans-serif;
+    /* color: #fff; */
+    }
+    .mainboss{
+        width: 80%;
+    }
+    
+    #menu{
+            width: 35px;
+            height: 30px;
+            margin: 30px 0px 20px 20px;
+            cursor: pointer;
+        }
+        .bar{
+            height: 5px;
+            width: 100%;
+            background-color: black;
+            display: block;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        #bar1{
+            transform: translateY(-4px);
+        }
+        #bar3{
+            transform: translateY(4px);
+        }
+        .nav li a {
+            color: black;
+            text-decoration: none;
+        }
+        .nav li a:hover{
+            border: 1px solid white;
+        }
+        .nav li{
+            list-style: none;
+        }
+        .nav{
+            margin: 0 20px;
+            padding: 0;
+            display: none;
+            /* display: flex; */
+            /* justify-content: space-evenly; */
+            transition: 1s ease;
+            
+        }
+        .boss{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            
+        }
+        #women{
+            margin-left: 0px;
+        }
+        #men{
+            margin-left: 29px;
+        }
+        #kids{
+            margin-left: 26px;
+        }
+        #beauty{
+            margin-left: 10px;
+        }
+        .mendrop{
+            display: none;
+        }
+        .kiddrop{
+            display: none;
+        }
+        .beautydrop{
+            display: none;
+        }
+        .icon .bar{
+            background-color: #fff;
+        }
+        .icon #bar1{
+            transform: translateY(4px) rotate(-45deg);
+        }
+        .icon #bar3{
+            transform: translateY(-6px) rotate(45deg);
+        }
+        .icon #bar2{
+            opacity: 0;
+        }
+        .change{
+            background-color: #fff;
+            height: 100vh;
+            margin: 0;
+            position: absolute;
+            font-size: 20px;
+            top: 0;
+            z-index: -100;
+            width: 33%;
+            display: flex;
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* flex-direction: row; */
+            justify-content: center;
+        }
+        .dropdown ul{
+            list-style: none;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+        .dropdown li{
+            /* float: left; */
+            position: relative;
+            width: auto;
+
+        }
+        .dropdown a{
+            display: block;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 15px 10px;
+            transition: all 0.55s ease;
+        }
+        .dropdown li:hover{
+            background-color: white;
+        }
+        .ulclass{
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 35px;
+            visibility: hidden;
+            z-index: 1;
+        }
+        li:hover ul.ulclass{
+            opacity: 1;
+            top: 80px;
+            visibility: visible;
+        }
+        .ulclass li{
+            float: none;
+            width: 100%;
+        }
+        .ulclass a:hover{
+            background: rgb(239, 241, 244);
+        }
+        .ulclass a{
+            background-color: white;
+        }
+    .navbar1{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    margin-bottom: 50px;
+    background-color: white;
+    }
+    #home a{
+        color: black;
+    }
+    
+    .help{
+        width: 20%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .help a{
+        color: black;
+    }
+    .searchbar{
+        margin-left: 580px;
+        display: flex;
+    }
+    #search{
+        height: 21px;
+border: none;
+outline: none;
+border-bottom: 1px solid black;
+    }
+  
+    
+    .oneimg img{
+        margin-top: 109px;
+        width: 104.5%;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    #middle{
+        padding-top: 50px;
+        width: 74%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin: auto;
+        gap: 20px 20px;
+    }
+    #middle p{
+        /* display: flex; */
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: lightgrey;
+        
+    }
+    #middle button{
+        /* height: 10px; */
+        display: block;
+        margin: auto;
+        border: none;
+        outline: none;
+        background-color: white;
+    }
+    #middle > div{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        text-align: center;
+    }
+    #down img{
+        width: 100%;
+    }
+    #down > div{
+        margin: auto;
+        width: 100%;
+    }
+    #down{
+        padding-top: 50px;
+        margin-left: 72px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        /* margin: auto; */
+        gap: 20px 20px;
+    }
+    #down p{
+        /* display: flex; */
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: lightgrey;
+     }
+     #down button{
+        /* height: 10px; */
+        display: block;
+        margin: auto;
+        border: none;
+        outline: none;
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+    #down > div{
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        text-align: center;
+    }
+    .downimg img{
+        display: block;
+        margin: auto;
+        margin-top: 109px;
+        width: 104.5%;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    .footer{
+        margin-top: 400px;
+        width: 50%;
+    }
+    #mail{
+        width: 60%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    .footer p{
+        /* margin-top: 20px; */
+        font-size: 10px;
+    }
+    .footer h4{
+        font-size: 20px;
+    }
+    .foot{
+        margin-top: 80px;
+    }
+    .social{
+        width: 60%;
+        margin-top: 150px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .last{
+        margin-top: 150px;
+        display: flex;
+    }
+    .last p{
+        font-size: 8px;
+    }
+    .last>div{
+        display: block;
+        margin: auto;
+    }
+   
+    </style>
+</head>
+<body>
+    <div class="navbar1">
+        <div id="navigation">
+            <div id="menu" onclick="onclickmenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+            <ul id="nav" class="nav">
+            <div class="boss">
+                <li><a href="./women.html" id="women">WOMEN</a>
+                    <div class="dropdown">
+                       <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BASICS</a></li>
+                        <li><a href="#">TROUSERS</a></li>
+                        <li><a href="#">BODYSUITS</a></li>
+                        <li><a href="#">DENIM EDITTREND</a></li>
+                        <li><a href="#">BEST SELLERSNEW</a></li>
+                        <li><a href="#">T-SHIRTS</a></li>
+                        <li><a href="#">JEANS</a></li>
+                        <li><a href="#">COATS</a></li>
+                        <li><a href="#">KNITWEAR</a></li>
+                       </ul>
+                    </div>
+                </li>
+                
+                <li><a href="./men.html" id="men">MEN</a>
+                    <div class="dropdown" >
+                        <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BEST SELLERSNEW</a></li>
+                        <li><a href="#">ZARA ORIGINS</a></li>
+                        <li><a href="#">ZARA ATHLETICZ</a></li>
+                        <li><a href="#">SUMMERY GARMENTSNEW</a></li>
+                        <li><a href="#">JEANS</a></li>
+                        <li><a href="#">SUITS</a></li>
+                        <li><a href="#">SHIRTS</a></li>
+                        <li><a href="#">TROUSERS</a></li>
+                        <li><a href="#">BLAZERS</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./kid.html" id="kids">KIDS</a>
+                 <div class="dropdown">
+                    <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BASICS</a></li>
+                        <li><a href="#">T-SHIRTS</a></li>
+                        <li><a href="#">SWEATSHIRTS</a></li>
+                        <li><a href="#">DRESSES | JUMPSUITS</a></li>
+                        <li><a href="#">SWIMWEAR</a></li>
+                        <li><a href="#">SKIRTS | BERMUDA SHORTS</a></li>
+                        <li><a href="#">LICENSES</a></li>
+                        <li><a href="#">SPORTSWEAR</a></li>
+                        <li><a href="#">SHIRTS | OVERSHIRTS</a></li>
+                    </ul>
+                 </div>
+                </li>
+                <li><a href="./beauty.html" id="beauty">BEAUTY</a>
+                   
+                </li>
+            </div>
+            </ul>
+        </div>
+         
+        <div class="logo" id="home"> <h1 ><a href="./home.html">ZARA</a></h1></div>
+            <div class="searchbar">
+                <input type="text" placeholder="Serach" id="search"> 
+                
+            </div>
+            
+             <div class="help">
+                <a href="./login.html">LOGIN</a>
+                <a href="#">HELP</a>
+                <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>  
+             </div>
+          </div>
+    </div>
+    <div class="oneimg">
+        <div>
+            <a href="#"><img src="https://static.zara.net/photos///2023/V/0/2/p/7446/430/832/32/w/1920/7446430832_15_2_1.jpg?ts=1676488270481" alt="Error"></a>
+        </div>
+    </div>
+
+    <div id="middle">
+
+    </div>
+
+    <div id="down">
+
+    </div>
+
+    <div class="downimg">
+        <img src="https://static.zara.net/photos///2023/V/0/2/p/1538/402/250/33/w/1239/1538402250_15_1_1.jpg?ts=1675081499034" alt="error">
+    </div>
+
+
+    <div class="footer">
+        <h4>JOIN OUR NEWSLETTER</h4>
+        <div class="foot">
+            <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS HERE" id="mail">
+        </div>
+        <div class="social">
+            <p>INSTAGRAM</p>
+            <p>FACEBOOK</p>
+            <p>TWITTER</p>
+            <p>PINTREST</p>
+            <p>YOUTUBE</p>
+            <p>SPOTIFY</p>
+        </div>
+    </div>
+
+    <div class="last">
+        <div>
+            <h6>HELP</h6>
+            <p>MY ZARA ACCOUNT</p>
+            <p>ITEMS SIZES</p>
+            <p>GIFT OPTIONS</p>
+            <p>SHIPPING</p>
+            <p>PAYMENT AND INVOICES</p>
+            <p>MY PURCHASES</p>
+            <p>EXCHANGE, RETURN</p>
+            <p>ZARA EXPERIENCE</p>
+        </div>
+        <div>
+            <h6>FOLLOW US</h6>
+            <p>NEWSLETTER</p>
+            <p>INSTAGRAM</p>
+            <p>FACEBOOK</p>
+            <p>TWITTER</p>
+            <p>PINTREST</p>
+            <p>YOUTUBE</p>
+        </div>
+        <div>
+            <h6>COMPANY</h6>
+            <p>ABUT US</p>
+            <p>JOIN LIFE</p>
+            <p>OFFICES</p>
+            <p>STORES</p>
+            <p>WORK WITH US</p>
+        </div>
+        <div>
+            <h6>POLICES</h6>
+            <p>PRIVACY POLICIES</p>
+            <p>PURCHASE CONDITION</p>
+            <p>GIFT CARD OPTIONS</p>
+            <p>COOKIE SETTINGS</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    function onclickmenu(){
+
+document.getElementById('menu').classList.toggle('icon');
+document.getElementById('nav').classList.toggle('change');
+}
+
+
+let mid = document.getElementById('middle')
+let down  = document.getElementById('down')
+
+let api2 = `https://mocki.io/v1/73cf913f-5314-4746-b8b0-a6504826abb3`
+
+let incart1 = JSON.parse(localStorage.getItem('incart1'))
+  if(incart1 == null){
+    incart1 = []
+  }
+
+
+datafetch2()
+  async function datafetch2(){
+
+    try{
+
+        let res2 = await fetch(api2)
+        let data2 = await res2.json()
+        display2(data2)
+        display(data2)
+        console.log(data2)
+    }
+
+    catch(error){
+        console.log(error)
+    }
+  }
+  
+
+  
+  function display2(data){
+
+
+data.forEach((ele)=>{
+//   ele.img
+    let parent = document.createElement('div')
+
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    let des = document.createElement('p')
+    des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    let mat = document.createElement('p')
+    mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+    btn.setAttribute('class', 'kilo')
+
+    btn.addEventListener('click', ()=>{
+        if(check(ele)){
+            alert("Product Already in Cart");
+        }
+        else{
+            incart1.push(ele);
+            localStorage.setItem("incart1", JSON.stringify(incart1));
+            alert("Product Added To Cart");
+        }
+
+    })
+
+    parent.append(img,name,des,price, mat, btn)
+    
+    mid.append(parent)
+     })
+}
+
+function display(data){
+
+
+data.forEach((ele)=>{
+//   ele.img
+    let parent = document.createElement('div')
+
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    let des = document.createElement('p')
+    des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    let mat = document.createElement('p')
+    mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+
+    btn.addEventListener('click', ()=>{
+        if(check(ele)){
+            alert("Product Already in Cart");
+        }
+        else{
+            incart1.push(ele);
+            localStorage.setItem("incart1", JSON.stringify(incart1));
+            alert("Product Added To Cart");
+        }
+
+    })
+
+    parent.append(img,name,des,price, mat, btn)
+    
+    down.append(parent)
+     })
+}
+function check(ele){
+    for (let i = 0; i < incart1.length; i++) {
+        if (Number(incart1[i].unid) == Number(ele.unid)) {
+          return true;
+        }
+      }
+      return false;
+}
+
+</script>
+</html>
