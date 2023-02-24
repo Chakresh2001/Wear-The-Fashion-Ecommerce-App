@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <style>
+*{
+    box-sizing: border-box;
+    /* width: 100%; */
+    }
+    html{
+        width: 95%;
+    }
+    ul{
+    list-style: none;
+    }
+    a{
+    text-decoration: none;
+    }
+    body{
+    font: 20px 'Sulphur Point', sans-serif;
+    /* color: #fff; */
+    }
+    .mainboss{
+        width: 80%;
+    }
+    
+    #menu{
+            width: 35px;
+            height: 30px;
+            margin: 30px 0px 20px 20px;
+            cursor: pointer;
+        }
+        .bar{
+            height: 5px;
+            width: 100%;
+            background-color: black;
+            display: block;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        #bar1{
+            transform: translateY(-4px);
+        }
+        #bar3{
+            transform: translateY(4px);
+        }
+        .nav li a {
+            color: black;
+            text-decoration: none;
+        }
+        .nav li a:hover{
+            border: 1px solid white;
+        }
+        .nav li{
+            list-style: none;
+        }
+        .nav{
+            margin: 0 20px;
+            padding: 0;
+            display: none;
+            /* display: flex; */
+            /* justify-content: space-evenly; */
+            transition: 1s ease;
+            
+        }
+        .boss{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            
+        }
+        #women{
+            margin-left: 0px;
+        }
+        #men{
+            margin-left: 29px;
+        }
+        #kids{
+            margin-left: 26px;
+        }
+        #beauty{
+            margin-left: 10px;
+        }
+        .mendrop{
+            display: none;
+        }
+        .kiddrop{
+            display: none;
+        }
+        .beautydrop{
+            display: none;
+        }
+        .icon .bar{
+            background-color: #fff;
+        }
+        .icon #bar1{
+            transform: translateY(4px) rotate(-45deg);
+        }
+        .icon #bar3{
+            transform: translateY(-6px) rotate(45deg);
+        }
+        .icon #bar2{
+            opacity: 0;
+        }
+        .change{
+            background-color: #fff;
+            height: 100vh;
+            margin: 0;
+            position: absolute;
+            font-size: 20px;
+            top: 0;
+            z-index: -100;
+            width: 33%;
+            display: flex;
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* flex-direction: row; */
+            justify-content: center;
+        }
+        .dropdown ul{
+            list-style: none;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+        .dropdown li{
+            /* float: left; */
+            position: relative;
+            width: auto;
+
+        }
+        .dropdown a{
+            display: block;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 15px 10px;
+            transition: all 0.55s ease;
+        }
+        .dropdown li:hover{
+            background-color: white;
+        }
+        .ulclass{
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 35px;
+            visibility: hidden;
+            z-index: 1;
+        }
+        li:hover ul.ulclass{
+            opacity: 1;
+            top: 80px;
+            visibility: visible;
+        }
+        .ulclass li{
+            float: none;
+            width: 100%;
+        }
+        .ulclass a:hover{
+            background: rgb(239, 241, 244);
+        }
+        .ulclass a{
+            background-color: white;
+        }
+    .navbar1{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    margin-bottom: 50px;
+    top: 0;
+    background-color: white;
+    }
+    #home a{
+        color: black;
+    }
+    
+    .help{
+        width: 20%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .help a{
+        color: black;
+    }
+    .searchbar{
+        margin-left: 580px;
+        display: flex;
+    }
+    #search{
+        height: 21px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+   #showimg img{
+width: 100%;
+   }
+   #showimg>div{
+    /* border: 2px solid red; */
+    text-align: center;
+    width: 100%;
+   }
+   #showimg{
+    /* margin-left: 60px; */
+    margin-top: 130px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* height: 400px; */
+    /* grid-template-rows: repeat(5, 1fr); */
+    gap: 20px 20px;
+   }
+   #showimg p{
+        
+        /* display: flex; */
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: lightgrey;
+     
+   }
+   #showimg button{
+    font-size: 17px;
+    outline: none;
+    border: none;
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: lightgrey;
+   }
+   #showimg button:hover{
+   cursor: pointer;
+   }
+   #span{
+    font-size: 16px;
+    /* color: blue; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /* color: lightgrey; */
+   }
+   #btn{
+    margin-left: 170px;
+   }
+   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    bottom: 0;
+    background-color: white; */
+   .price {
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+   }
+   .price p{
+    font-size: 10px;
+    
+   }
+   .price  h4{
+   
+    font-size: 15px;
+   }
+   .price button{
+   margin-right: 80px;
+    background-color: black;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    transition: all 0.5s;
+  
+   }
+   .button span {
+    font-size: 10px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+   /* width: 60%;
+    height: 25px;
+    background-color: black;
+    color: white; */
+   .price button:hover{
+    background-color: rgb(48, 48, 48);
+    cursor: pointer;
+   }
+   .footer{
+        margin-top: 400px;
+        width: 50%;
+    }
+    #mail{
+        width: 60%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    .footer p{
+        /* margin-top: 20px; */
+        font-size: 10px;
+    }
+    .footer h4{
+        font-size: 20px;
+    }
+    .foot{
+        margin-top: 80px;
+    }
+    .social{
+        width: 60%;
+        margin-top: 150px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .last{
+        margin-top: 150px;
+        display: flex;
+        margin-bottom: 250px;
+    }
+    .last p{
+        font-size: 8px;
+    }
+    .last>div{
+        display: block;
+        margin: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar1">
+        <div id="navigation">
+            <div id="menu" onclick="onclickmenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+            <ul id="nav" class="nav">
+            <div class="boss">
+                <li><a href="./women.html" id="women">WOMEN</a>
+                    <div class="dropdown">
+                       <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BASICS</a></li>
+                        <li><a href="#">TROUSERS</a></li>
+                        <li><a href="#">BODYSUITS</a></li>
+                        <li><a href="#">DENIM EDITTREND</a></li>
+                        <li><a href="#">BEST SELLERSNEW</a></li>
+                        <li><a href="#">T-SHIRTS</a></li>
+                        <li><a href="#">JEANS</a></li>
+                        <li><a href="#">COATS</a></li>
+                        <li><a href="#">KNITWEAR</a></li>
+                       </ul>
+                    </div>
+                </li>
+                
+                <li><a href="./men.html" id="men">MEN</a>
+                    <div class="dropdown" >
+                        <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BEST SELLERSNEW</a></li>
+                        <li><a href="#">ZARA ORIGINS</a></li>
+                        <li><a href="#">ZARA ATHLETICZ</a></li>
+                        <li><a href="#">SUMMERY GARMENTSNEW</a></li>
+                        <li><a href="#">JEANS</a></li>
+                        <li><a href="#">SUITS</a></li>
+                        <li><a href="#">SHIRTS</a></li>
+                        <li><a href="#">TROUSERS</a></li>
+                        <li><a href="#">BLAZERS</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./kid.html" id="kids">KIDS</a>
+                 <div class="dropdown">
+                    <ul class="ulclass">
+                        <li><a href="#">NEW</a></li>
+                        <li><a href="#">BASICS</a></li>
+                        <li><a href="#">T-SHIRTS</a></li>
+                        <li><a href="#">SWEATSHIRTS</a></li>
+                        <li><a href="#">DRESSES | JUMPSUITS</a></li>
+                        <li><a href="#">SWIMWEAR</a></li>
+                        <li><a href="#">SKIRTS | BERMUDA SHORTS</a></li>
+                        <li><a href="#">LICENSES</a></li>
+                        <li><a href="#">SPORTSWEAR</a></li>
+                        <li><a href="#">SHIRTS | OVERSHIRTS</a></li>
+                    </ul>
+                 </div>
+                </li>
+                <li><a href="./beauty.html" id="beauty">BEAUTY</a>
+                    <div class="dropdown">
+                        <ul class="ulclass">
+                            <li><a href="#">FACE</a></li>
+                            <li><a href="#">LIPS</a></li>
+                            <li><a href="#">EYES</a></li>
+                            <li><a href="#">NAIL POLISH</a></li>
+                            <li><a href="#">BRUSHES</a></li>
+                            <li><a href="#">REFILLS</a></li>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">STORIES</a></li>
+                            <li><a href="#">VR STORE</a></li>
+                            <li><a href="#">JION LIFE</a></li>
+                        </ul>
+                     </div>
+                </li>
+            </div>
+            </ul>
+        </div>
+         
+        <div class="logo" id="home"> <h1 ><a href="./home.html">ZARA</a></h1></div>
+            <div class="searchbar">
+                <input type="text" placeholder="Serach" id="search"> 
+                
+            </div>
+            
+             <div class="help">
+                <a href="./login.html">LOGIN</a>
+                <a href="#">HELP</a>
+                <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>
+             </div>
+          </div>
+    </div>
+
+    <div id="showimg">
+
+    </div>
+    <div class="footer">
+        <h4>JOIN OUR NEWSLETTER</h4>
+        <div class="foot">
+            <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS HERE" id="mail">
+        </div>
+        <div class="social">
+            <p>INSTAGRAM</p>
+            <p>FACEBOOK</p>
+            <p>TWITTER</p>
+            <p>PINTREST</p>
+            <p>YOUTUBE</p>
+            <p>SPOTIFY</p>
+        </div>
+    </div>
+
+    <div class="last">
+        <div>
+            <h6>HELP</h6>
+            <p>MY ZARA ACCOUNT</p>
+            <p>ITEMS SIZES</p>
+            <p>GIFT OPTIONS</p>
+            <p>SHIPPING</p>
+            <p>PAYMENT AND INVOICES</p>
+            <p>MY PURCHASES</p>
+            <p>EXCHANGE, RETURN</p>
+            <p>ZARA EXPERIENCE</p>
+        </div>
+        <div>
+            <h6>FOLLOW US</h6>
+            <p>NEWSLETTER</p>
+            <p>INSTAGRAM</p>
+            <p>FACEBOOK</p>
+            <p>TWITTER</p>
+            <p>PINTREST</p>
+            <p>YOUTUBE</p>
+        </div>
+        <div>
+            <h6>COMPANY</h6>
+            <p>ABUT US</p>
+            <p>JOIN LIFE</p>
+            <p>OFFICES</p>
+            <p>STORES</p>
+            <p>WORK WITH US</p>
+        </div>
+        <div>
+            <h6>POLICES</h6>
+            <p>PRIVACY POLICIES</p>
+            <p>PURCHASE CONDITION</p>
+            <p>GIFT CARD OPTIONS</p>
+            <p>COOKIE SETTINGS</p>
+        </div>
+        
+    </div>
+
+    <div class="price">
+        <div class="pricetotal">
+            <h4>TOTAL <span id="cart-total">0</span></h4>
+          <p>INCLUDING GST</p>
+          <p>+EXCEL SHIPPING COST</p>
+        </div>
+        <div class="btncon">
+            <a href="#"><button class="button"><span>CONTINUE </span></button></a>
+        </div>
+         
+    </div>
+    
+
+   
+</body>
+
+<script>
+ function onclickmenu(){
+
+document.getElementById('menu').classList.toggle('icon');
+document.getElementById('nav').classList.toggle('change');
+}
+
+let incart1 = JSON.parse(localStorage.getItem('incart1'))
+console.log(incart1)
+
+let show = document.getElementById('showimg')
+
+function display(){
+
+    show.innerHTML = ''
+
+    incart1.forEach((ele,i)=>{
+
+        let parent = document.createElement('div')
+
+        let img = document.createElement('img')
+        img.setAttribute('src', ele.img)
+
+        let name = document.createElement('h4')
+        name.innerText = ele.name
+
+        // let des = document.createElement('p')
+        // des.innerText = ele.desc
+
+        let price = document.createElement('p')
+        price.innerText = '$ '+ ele.price
+
+        // let mat = document.createElement('p')
+        // mat.innerText = ele.material
+
+        let quantity = document.createElement('span')
+        quantity.textContent=ele.quantity
+
+        quantity.setAttribute('id', 'span')
+
+        let ince = document.createElement('button')
+        ince.innerText = '+'
+        
+
+        let dec = document.createElement('button')
+        dec.innerText = '-'
+        
+
+        let btn = document.createElement('button')
+        btn.innerText = 'DELETE'
+        btn.setAttribute('id', 'btn')
+
+        
+
+        btn.addEventListener('click', ()=>{
+
+            incart1 = incart1.filter((ele,ind)=>{
+
+                if(i==ind){
+                    return false
+                }
+                else{
+                    return true
+                }
+            })
+            localStorage.setItem('incart1', JSON.stringify(incart1))
+            display()
+        })
+        ince.addEventListener("click", () => {
+        ele=ele.quantity++
+    
+        localStorage.setItem("incart1",JSON.stringify(incart1))
+          display()
+      
+        });
+       dec.addEventListener("click", () => {
+          if(ele.quantity>1){
+            ele=ele.quantity--
+            localStorage.setItem("incart1",JSON.stringify(incart1))
+          display()
+          }
+      
+        });
+
+        let sum=0;
+        for(let i=0;i<incart1.length;i++){
+            sum+=incart1[i].price*incart1[i].quantity;
+        }
+    
+         document.getElementById("cart-total").textContent=sum;
+
+        parent.append(img,name,price, ince,quantity, dec, btn)
+        
+        show.append(parent)
+
+    })
+}
+display()
+
+
+
+    
+</script>
+</html>
