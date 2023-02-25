@@ -179,9 +179,11 @@
     position: fixed;
     margin-bottom: 50px;
     top: 0;
+    background-color: white;
     }
     #home a{
         color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
     
     .help{
@@ -389,6 +391,46 @@ font-size: 13px;
         font-size: 13px;
 
     }
+    @media only screen and (min-width: 500px) and (max-width: 1200px) {
+            .oneimg{
+                display: none;
+                
+            }
+            #one{
+               display: none;
+            }
+            #two{
+               display: none;
+            }
+            .searchbar{
+                display: none;
+            }
+            #middle{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            #grid{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        /* mobile Screen */
+        @media only screen and (max-width: 500px){
+            .oneimg{
+                display: none;
+                
+            }
+            #one{
+                display: none;
+            }
+            #two{
+                display: none   ;
+            }
+            .searchbar{
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -478,7 +520,7 @@ font-size: 13px;
             
              <div class="help">
                 <a href="./login.html"><span  id="username"> LOG IN</span></a>
-                <a href="#">HELP</a>
+                <a href="./help.html">HELP</a>
                 <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>   
              </div>
           </div>
@@ -684,7 +726,7 @@ datafetch2()
         let res2 = await fetch(downapi)
         let data2 = await res2.json()
         display2(data2)
-        
+        console.log(data2)
        
     }
 
@@ -756,7 +798,7 @@ datafetch3()
         let res3 = await fetch(bapi)
         let data3 = await res3.json()
         display3(data3)
-        
+        console.log(data3)
         
     }
 

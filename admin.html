@@ -184,6 +184,7 @@
     }
     #home a{
         color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
     
     .help{
@@ -366,7 +367,7 @@
             
              <div class="help">
                 <a href="./login.html"><span  id="username"> LOG IN</span></a>
-                <a href="#">HELP</a>
+                <a href="./help.html">HELP</a>
                 <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>
              </div>
           </div>
@@ -476,12 +477,16 @@ document.getElementById('nav').classList.toggle('change');
         if(a){
             user.innerText = 'ADMIN'
             Swal.fire({
-  position: 'top-end',
+
   icon: 'success',
   title: 'LOGIN SUCCESSFULL',
+  footer: 'WELCOME ADMIN',
   showConfirmButton: false,
   timer: 1500
 })
+
+
+
         }
         else{
             Swal.fire({

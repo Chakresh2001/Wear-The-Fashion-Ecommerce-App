@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         *{
     box-sizing: border-box;
     /* width: 100%; */
+    }
+    .mainboss{
+        width: 80%;
     }
     html{
         width: 95%;
@@ -178,8 +181,8 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: fixed;
     margin-bottom: 50px;
-    background-color: white;
     top: 0;
+    /* background-color: white; */
     }
     #home a{
         color: black;
@@ -204,96 +207,15 @@ border: none;
 outline: none;
 border-bottom: 1px solid black;
     }
-  
-    
-    .oneimg img{
+    .helppage img{
         margin-top: 6px;
         width: 104.5%;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
-    #middle{
-        padding-top: 50px;
-        width: 74%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* grid-template-rows: repeat(4, 1fr); */
-        margin: auto;
-        gap: 20px 20px;
+    .helppage {
+        margin-top: 110px;
+           /* display: flex; */
     }
-    #middle p{
-        /* display: flex; */
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: lightgrey;
-        
-    }
-    #middle button{
-        /* height: 10px; */
-        display: block;
-        margin: auto;
-        border: none;
-        outline: none;
-        background-color: white;
-        border-radius: 50px;
-    }
-    #middle > div{
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        text-align: center;
-    }
-    #down img{
-        width: 100%;
-    }
-    #down > div{
-        margin: auto;
-        width: 100%;
-    }
-    #down{
-        padding-top: 50px;
-        margin-left: 72px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        /* margin: auto; */
-        gap: 20px 20px;
-    }
-    #down p{
-        /* display: flex; */
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: lightgrey;
-     }
-     #down button{
-        /* height: 10px; */
-        display: block;
-        margin: auto;
-        border: none;
-        outline: none;
-        background-color: white;
-        width: 100px;
-        height: 100px;
-        font-size: 20px;
-        border-radius: 50px;
-    }
-    #down button:hover{
-       cursor: pointer;
-    }
-    #down > div{
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-        text-align: center;
-    }
-    .downimg img{
-        display: block;
-        margin: auto;
-        margin-top: 109px;
-        width: 104.5%;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    }
-    .footer{
-        margin-top: 400px;
-        width: 50%;
-    }
-    #mail{
-        width: 60%;
+    .helppage input{
         border: none;
         outline: none;
         border-bottom: 1px solid black;
@@ -324,70 +246,16 @@ border-bottom: 1px solid black;
     .last>div{
         display: block;
         margin: auto;
+    }.footer{
+        margin-top: 400px;
+        width: 50%;
     }
-    .bossfilter{
-        /* border: 1px solid blue; */
-        display: flex;
-        margin: auto;
-        align-items: end;
-        justify-content: center;
-    }
-   #middle button:hover{
-    background-color: gray;
-   }
-    .filter{
-        margin-top: 112px;
-        width: 20%;
-        display: flex;
-        justify-content: flex-end;
-        /* position: fixed; */
-        /* border: 1px solid red; */
-        /* margin: auto; */
-    }
-    .filter select{
-        width: 100%;
-        height: 20px;
-        border-radius: 20px;
-        margin-left: 20px;
-        background-color: gray;
-        color: white;
-        outline: none;
+    #mail{
+        width: 60%;
         border: none;
+        outline: none;
+        border-bottom: 1px solid black;
     }
-    @media only screen and (min-width: 500px) and (max-width: 1200px) {
-            .oneimg{
-                display: none;
-                
-            }
-            #middle{
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-            #down{
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .searchbar{
-                display: none;
-            }
-        }
-        /* mobile Screen */
-        @media only screen and (max-width: 500px){
-            .oneimg{
-                display: none;
-                
-            }
-            #middle{
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-            }
-            #down{
-                display: none   ;
-            }
-            .searchbar{
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -450,7 +318,7 @@ border-bottom: 1px solid black;
                  </div>
                 </li>
                 <li><a href="./beauty.html" id="beauty">BEAUTY</a>
-                   
+                    
                 </li>
             </div>
             </ul>
@@ -463,50 +331,21 @@ border-bottom: 1px solid black;
             </div>
             
              <div class="help">
-                <a href="./login.html"><span  id="username"> LOG IN</span></a>
-                <a href="./help.html">HELP</a>
-                <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>  
+                <a href="./login.html"><span  id="username"> LOGIN</span></a>
+                <a href="#">HELP</a>
+                <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>   
              </div>
           </div>
     </div>
-<div class="bossfilter">
-    <div class="filter">
-        <select id="changeprice">
-            <option value="PRICE">PRICE</option>
-            <option value="high">High to Low</option>
-            <option value="low">Low to High</option>
-        </select>
-        <select id="changequaltiy">
-            <option value="">MATERIAL</option>
-            <option value="COTTON">COTTON</option>
-            <option value="LINEN">LINEN</option>
-            <option value="ECRU">ECRU</option>
-        </select>
+
+    <div class="helppage">
+        <h4>HOW CAN WE HELP YOU</h4>
+        <input type="text" placeholder="SEARCH">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/ss23-help-customer/subhome-xmedia-01-north//w/1899/IMAGE-landscape-web-6aad7d60-e552-4f2c-8f3d-9ebfffbc32c7-default_0.jpg?ts=1677226741192" alt="error"> 
+         
+        
     </div>
-</div>
-   
-
-
-
-    <div class="oneimg">
-        <div>
-            <a href="#"><img src="https://static.zara.net/photos///2023/V/0/2/p/7446/430/832/32/w/1920/7446430832_15_2_1.jpg?ts=1676488270481" alt="Error"></a>
-        </div>
-    </div>
-
-    <div id="middle">
-
-    </div>
-
-    <div id="down">
-
-    </div>
-
-    <div class="downimg">
-        <img src="https://static.zara.net/photos///2023/V/0/2/p/1538/402/250/33/w/1239/1538402250_15_1_1.jpg?ts=1675081499034" alt="error">
-    </div>
-
-
+        
     <div class="footer">
         <h4>JOIN OUR NEWSLETTER</h4>
         <div class="foot">
@@ -568,238 +407,5 @@ document.getElementById('menu').classList.toggle('icon');
 document.getElementById('nav').classList.toggle('change');
 }
 
-
-let mid = document.getElementById('middle')
-let down  = document.getElementById('down')
-
-let api2 = `https://mocki.io/v1/73cf913f-5314-4746-b8b0-a6504826abb3`
-
-let incart1 = JSON.parse(localStorage.getItem('incart1'))
-  if(incart1 == null){
-    incart1 = []
-  }
-
-
-datafetch()
-  async function datafetch(){
-
-    try{
-
-        let res = await fetch(api2)
-        let data = await res.json()
-        display2(data)
-        display(data)
-        // console.log(data2)
-        checkprice(data)
-        // checkqua(data2)
-        changemat(data)
-        changemat2(data)
-    }
-
-    catch(error){
-        console.log(error)
-    }
-  }
-  
-
-  
-  function display2(data){
-
- mid.innerHTML = ''
-data.forEach((ele)=>{
-//   ele.img
-    let parent = document.createElement('div')
-
-    let img = document.createElement('img')
-    img.setAttribute('src', ele.img)
-
-    let name = document.createElement('h6')
-    name.innerText = ele.name
-
-    let des = document.createElement('p')
-    des.innerText = ele.desc
-
-    let price = document.createElement('p')
-    price.innerText = '$ '+ ele.price
-
-    let mat = document.createElement('p')
-    mat.innerText = ele.material
-
-    let btn = document.createElement('button')
-    btn.innerText = '+'
-    btn.setAttribute('class', 'kilo')
-
-    btn.addEventListener('click', ()=>{
-        if(check(ele)){
-            Swal.fire({
-  icon: 'error',
-  title: 'Oops...',
-  text: 'PRODUCT ALREADY IN CART',
-
-})
-
-        }
-        else{
-            incart1.push(ele);
-            localStorage.setItem("incart1", JSON.stringify(incart1));
-            Swal.fire({
-//   position: 'top-end',
-  icon: 'success',
-  title: 'PRODUCT ADDED TO CART',
-  showConfirmButton: false,
-  timer: 2000
-})
-        }
-
-    })
-
-    parent.append(img,name,des,price, mat, btn)
-    
-    mid.append(parent)
-     })
-}
-
-function display(data){
-
-    down.innerHTML =''
-
-data.forEach((ele)=>{
-//   ele.img
-    let parent = document.createElement('div')
-
-    let img = document.createElement('img')
-    img.setAttribute('src', ele.img)
-
-    let name = document.createElement('h6')
-    name.innerText = ele.name
-
-    let des = document.createElement('p')
-    des.innerText = ele.desc
-
-    let price = document.createElement('p')
-    price.innerText = '$ '+ ele.price
-
-    let mat = document.createElement('p')
-    mat.innerText = ele.material
-
-    let btn = document.createElement('button')
-    btn.innerText = '+'
-
-    btn.addEventListener('click', ()=>{
-        if(check(ele)){
-            Swal.fire({
-  icon: 'error',
-  title: 'Oops...',
-  text: 'PRODUCT ALREADY IN CART',
-
-})
-        }
-        else{
-            incart1.push(ele);
-            localStorage.setItem("incart1", JSON.stringify(incart1));
-            Swal.fire({
-//   position: 'top-end',
-  icon: 'success',
-  title: 'PRODUCT ADDED TO CART',
-  showConfirmButton: false,
-  timer: 2000
-})
-        }
-
-    })
-
-    parent.append(img,name,des,price, mat, btn)
-    
-    down.append(parent)
-     })
-}
-function check(ele){
-    for (let i = 0; i < incart1.length; i++) {
-        if (Number(incart1[i].unid) == Number(ele.unid)) {
-          return true;
-        }
-      }
-      return false;
-}
-
-
-let pricechange = document.getElementById('changeprice')
-
-function checkprice(data){
-
-pricechange.addEventListener('change', ()=>{
-
-    if(pricechange.value=='PRICE'){
-        display2(data)
-        display(data)
-        
-    }
-    else{
-        if(pricechange.value == 'high'){
-
-        data.sort((a,b)=> {if (Number(a.price) < Number(b.price)) {return 1} if(Number(b.price) < Number(a.price)) {return -1}})
-        
-        }
-        else if(pricechange.value == 'low'){
-
-        data.sort((a,b)=> {if (Number(a.price) > Number(b.price)) {return 1} if(Number(b.price) > Number(a.price)) {return -1}})
-        
-        }
-
-        display2(data)
-        display(data)
-       
-    }
-})
-}
-
-let logpage = JSON.parse(localStorage.getItem('logp'))
-
-let username = document.getElementById('username')
-
-for(let i=0; i<logpage.length; i++){
-            username.innerText = logpage[i]
-        }
-
-        let mat = document.getElementById('changequaltiy')
-
-function changemat(data){
-
-  mat.addEventListener('change', ()=>{
-
-    if(mat.value==''){
-      display(data)
-    }
-    else{
-        let res = data.filter((ele)=>{
-
-return ele.material==mat.value
-})
-
-console.log(res)
-display(res)
-    }
-
-   
-  })
-}
-function changemat2(data){
-
-mat.addEventListener('change', ()=>{
-
-  if(mat.value==''){
-    display2(data)
-  }
-  else{
-    let res = data.filter((ele)=>{
-
-return ele.material==mat.value
-})
-display2(res)
-  }
-
-  
-})
-}
 </script>
 </html>

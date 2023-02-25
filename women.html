@@ -192,6 +192,7 @@
     }
     .help a{
         color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
     .searchbar{
         margin-left: 580px;
@@ -423,6 +424,40 @@
         outline: none;
         border: none;
     }
+    @media only screen and (min-width: 500px) and (max-width: 1200px) {
+            .womendis{
+                display: none;
+                
+            }
+            #middle{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #down{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .searchbar{
+                display: none;
+            }
+        }
+        /* mobile Screen */
+        @media only screen and (max-width: 500px){
+            .womendis{
+                display: none;
+                
+            }
+            #middle{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            #down{
+                display: none   ;
+            }
+            .searchbar{
+                display: none;
+            }
+        }
     </style>
      <!-- <div class="searchbar">
         <input type="text" placeholder="Serach" id="search"> 
@@ -516,7 +551,7 @@
             
              <div class="help">
                 <a href="./login.html"><span  id="username"> LOGIN</span></a>
-                <a href="#">HELP</a>
+                <a href="./help.html">HELP</a>
                 <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>
              </div>
           </div>
@@ -646,6 +681,8 @@ document.getElementById('nav').classList.toggle('change');
     incart1 = []
   }
 
+
+
   datafetch2()
   async function datafetch2(){
 
@@ -656,6 +693,7 @@ document.getElementById('nav').classList.toggle('change');
         display2(data2)
         checkprice2(data2)
         changemat2(data2)
+        womendata.push(data2)
     }
 
     catch(error){
@@ -663,7 +701,7 @@ document.getElementById('nav').classList.toggle('change');
     }
   }
   
- 
+
 
   function display2(data){
 
