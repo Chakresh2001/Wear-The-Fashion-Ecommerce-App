@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECKOUT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+
+*{
+    box-sizing: border-box;
+    /* width: 100%; */
+    }
+    .mainboss{
+        width: 80%;
+    }
+    html{
+        width: 95%;
+    }
+    ul{
+    list-style: none;
+    }
+    a{
+    text-decoration: none;
+    }
+    body{
+    font: 20px 'Sulphur Point', sans-serif;
+    /* color: #fff; */
+    }
+    .mainboss{
+        width: 80%;
+    }
+    
+    #menu{
+            width: 35px;
+            height: 30px;
+            margin: 30px 0px 20px 20px;
+            cursor: pointer;
+        }
+        .bar{
+            height: 5px;
+            width: 100%;
+            background-color: black;
+            display: block;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        #bar1{
+            transform: translateY(-4px);
+        }
+        #bar3{
+            transform: translateY(4px);
+        }
+        .nav li a {
+            color: black;
+            text-decoration: none;
+        }
+        .nav li a:hover{
+            border: 1px solid white;
+        }
+        .nav li{
+            list-style: none;
+        }
+        .nav{
+            margin: 0 20px;
+            padding: 0;
+            display: none;
+            /* display: flex; */
+            /* justify-content: space-evenly; */
+            transition: 1s ease;
+            
+        }
+        .boss{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            
+        }
+        #women{
+            margin-left: 0px;
+        }
+        #men{
+            margin-left: 29px;
+        }
+        #kids{
+            margin-left: 26px;
+        }
+        #beauty{
+            margin-left: 10px;
+        }
+        .mendrop{
+            display: none;
+        }
+        .kiddrop{
+            display: none;
+        }
+        .beautydrop{
+            display: none;
+        }
+        .icon .bar{
+            background-color: #fff;
+        }
+        .icon #bar1{
+            transform: translateY(4px) rotate(-45deg);
+        }
+        .icon #bar3{
+            transform: translateY(-6px) rotate(45deg);
+        }
+        .icon #bar2{
+            opacity: 0;
+        }
+        .change{
+            background-color: #fff;
+            height: 100vh;
+            margin: 0;
+            position: absolute;
+            font-size: 20px;
+            top: 0;
+            z-index: -100;
+            width: 33%;
+            display: flex;
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* flex-direction: row; */
+            justify-content: center;
+        }
+        .dropdown ul{
+            list-style: none;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+        .dropdown li{
+            /* float: left; */
+            position: relative;
+            width: auto;
+
+        }
+        .dropdown a{
+            display: block;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 15px 10px;
+            transition: all 0.55s ease;
+        }
+        .dropdown li:hover{
+            background-color: white;
+        }
+        .ulclass{
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 35px;
+            visibility: hidden;
+            z-index: 1;
+        }
+        li:hover ul.ulclass{
+            opacity: 1;
+            top: 80px;
+            visibility: visible;
+        }
+        .ulclass li{
+            float: none;
+            width: 100%;
+        }
+        .ulclass a:hover{
+            background: rgb(239, 241, 244);
+        }
+        .ulclass a{
+            background-color: white;
+        }
+    .navbar1{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    margin-bottom: 50px;
+    top: 0;
+    /* background-color: white; */
+    }
+    #home a{
+        color: black;
+    }
+    
+    .help{
+        width: 20%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .help a{
+        color: black;
+    }
+    .searchbar{
+        margin-left: 580px;
+        display: flex;
+    }
+    #search{
+        height: 21px;
+border: none;
+outline: none;
+border-bottom: 1px solid black;
+    }
+        
+    .footer p{
+        /* margin-top: 20px; */
+        font-size: 10px;
+    }
+    .footer h4{
+        font-size: 20px;
+    }
+    .foot{
+        margin-top: 80px;
+    }
+    .social{
+        width: 60%;
+        margin-top: 150px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .last{
+        margin-top: 150px;
+        display: flex;
+    }
+    .last p{
+        font-size: 8px;
+    }
+    .last>div{
+        display: block;
+        margin: auto;
+    }
+    .formholder{
+        margin-left: 125px;
+        margin-top: 220px;
+        
+        display: flex;
+        /* margin: auto; */
+        width: 80%;
+        gap: 20px;
+    }
+    .formholder span{
+        font-size: 10px;
+    }
+    #name{
+        width: 100%;
+        margin-top: 50px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    #add{
+        width: 100%;
+        margin-top: 50px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    #local{
+        width: 100%;
+        margin-top: 50px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    #states{
+        width: 100%;
+        margin-top: 50px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    #phone{
+        width: 72%;
+        margin-top: 50px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+        /* margin-right: 50px; */
+    }
+    .rightside {
+
+        width: 40%;
+        /* border: 1px solid red; */
+    }
+    .leftside{
+        margin-top: 0px;
+        width: 40%;
+        /* border: 1px solid blue; */
+        /* margin-right: 200px; */
+        /* height: auto; */
+
+    }
+   
+    #rpass{
+        /* margin-right: 50px; */
+        margin-top: 50px;
+        width: 90%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    #pincode{
+        margin-top: 50px;
+        width: 90%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    #optional{
+        margin-top: 50px;
+        width: 90%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    #city{
+        margin-top: 50px;
+        width: 90%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    .detail{
+        margin-top: 138px;
+        margin-left: 125px;
+    }
+    #ptag{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #region{
+        font-size: 8px;
+    }
+    #india{
+        font-size: 14px;
+    }
+    #checkbox1{
+        margin-top: 50px;
+    }
+    #checkbox2{
+        margin-top: 50px;
+    }
+    #submit{
+        margin-top: 50px;
+    }
+    #check1 span{
+    margin-top: 50px;
+    margin-left: 10px;
+   }
+   #phone1 input{
+   margin-left: 60px;
+   }
+   #phone1{
+    display: flex;
+    align-items: end;
+   }
+   #check2 span{
+    margin-top: 50px;
+    margin-left: 10px;
+   }
+   #submit{
+    background-color: white;
+    color: black;
+    border: .5px solid black;
+    width: 100%;
+    height: 35px;
+   }
+   #submit:hover{
+    cursor: pointer;
+   }
+   .footer{
+            margin-top: 400px;
+        width: 50%;
+    }
+    #mail{
+        margin-top: 50px;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+    .price {
+    width: 80%;
+    /* padding-left: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    /* left: 0; */
+    /* margin-right: 100px; */
+   }
+   .price p{
+    font-size: 10px;
+    
+   }
+   .price  h4{
+   
+    font-size: 15px;
+   }
+   .price button{
+   margin-right: 80px;
+    background-color: black;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    transition: all 0.5s;
+  
+   }
+   #button span {
+    font-size: 10px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#button:hover span {
+  padding-right: 25px;
+}
+
+#button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+   /* width: 60%;
+    height: 25px;
+    background-color: black;
+    color: white; */
+   .price button:hover{
+    background-color: rgb(48, 48, 48);
+    cursor: pointer;
+   }
+   
+   .pricetotal{
+    height: 104px;
+    font-size: 20px;
+   }
+    </style>
+</head>
+<body>
+
+    <div class="mainboss">
+        <div class="navbar1">
+            <div id="navigation">
+                <div id="menu" onclick="onclickmenu()">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                </div>
+                <ul id="nav" class="nav">
+                <div class="boss">
+                    <li><a href="./women.html" id="women">WOMEN</a>
+                        <div class="dropdown">
+                           <ul class="ulclass">
+                            <li><a href="#">NEW</a></li>
+                            <li><a href="#">BASICS</a></li>
+                            <li><a href="#">TROUSERS</a></li>
+                            <li><a href="#">BODYSUITS</a></li>
+                            <li><a href="#">DENIM EDITTREND</a></li>
+                            <li><a href="#">BEST SELLERSNEW</a></li>
+                            <li><a href="#">T-SHIRTS</a></li>
+                            <li><a href="#">JEANS</a></li>
+                            <li><a href="#">COATS</a></li>
+                            <li><a href="#">KNITWEAR</a></li>
+                           </ul>
+                        </div>
+                    </li>
+                    
+                    <li><a href="./men.html" id="men">MEN</a>
+                        <div class="dropdown" >
+                            <ul class="ulclass">
+                            <li><a href="#">NEW</a></li>
+                            <li><a href="#">BEST SELLERSNEW</a></li>
+                            <li><a href="#">ZARA ORIGINS</a></li>
+                            <li><a href="#">ZARA ATHLETICZ</a></li>
+                            <li><a href="#">SUMMERY GARMENTSNEW</a></li>
+                            <li><a href="#">JEANS</a></li>
+                            <li><a href="#">SUITS</a></li>
+                            <li><a href="#">SHIRTS</a></li>
+                            <li><a href="#">TROUSERS</a></li>
+                            <li><a href="#">BLAZERS</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="./kid.html" id="kids">KIDS</a>
+                     <div class="dropdown">
+                        <ul class="ulclass">
+                            <li><a href="#">NEW</a></li>
+                            <li><a href="#">BASICS</a></li>
+                            <li><a href="#">T-SHIRTS</a></li>
+                            <li><a href="#">SWEATSHIRTS</a></li>
+                            <li><a href="#">DRESSES | JUMPSUITS</a></li>
+                            <li><a href="#">SWIMWEAR</a></li>
+                            <li><a href="#">SKIRTS | BERMUDA SHORTS</a></li>
+                            <li><a href="#">LICENSES</a></li>
+                            <li><a href="#">SPORTSWEAR</a></li>
+                            <li><a href="#">SHIRTS | OVERSHIRTS</a></li>
+                        </ul>
+                     </div>
+                    </li>
+                    <li><a href="./beauty.html" id="beauty">BEAUTY</a>
+                        
+                    </li>
+                </div>
+                </ul>
+            </div>
+             
+            <div class="logo" id="home"> <h1 ><a href="./home.html">ZARA</a></h1></div>
+                <div class="searchbar">
+                    <input type="text" placeholder="Serach" id="search"> 
+                    
+                </div>
+                
+                 <div class="help">
+                    <a href="./login.html"><span  id="username"> LOGIN</span></a>
+                    <a href="#">HELP</a>
+                    <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>   
+                 </div>
+              </div>
+        </div>
+    
+    <div class="formholder">
+        
+        <div class="rightside">
+           <form id="form1">
+            <div><input type="text" placeholder="NAME" id="name"></div>
+            <div><input type="text" placeholder="ADDRESS" id="add">     </div>
+            <div><input type="text" placeholder="LOCALITY" id="local"></div>
+            <div>
+                <select name="State" id="states">
+                    <option value="Select">--</option>
+                   <option value="Andhra Pradesh">Andhra Pradesh</option> <optio></optio>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+
+               </div>
+               
+               <div><input type="email" placeholder="E-MAIL" id="mail"></div>
+               
+            
+            <div id="check1">
+                <input type="checkbox" id="checkbox1"><span>I wish to recieve zara news on my email</span>
+            </div>
+           
+            </form>
+        </div>
+
+        <div class="leftside">
+            <form id="form2">
+               
+            <div><input type="text" placeholder="PINCODE" id="pincode"></div>
+            <div><input type="text" placeholder="Optional" id="optional"></div>
+            <div><input type="text" placeholder="CITY" id="city"></div>
+            <p id="region">
+                REGION
+            </p>
+            <P id="india">
+                India
+            </P>
+            <div id="phone1">
+                <span>+91</span><input type="text" placeholder="TELEPHONE" id="phone">
+                       
+            </div>
+            </form>
+        </div>
+
+
+        <div class="price">
+            <div class="pricetotal">
+                <h4>TOTAL <span id="cart-total">0</span></h4>
+              <p>INCLUDING GST</p>
+              <p>+EXCEL SHIPPING COST</p>
+            </div>
+            <div class="btncon">
+                <button id="button"><span>PAYMENT</span></button>
+            </div>
+             
+        </div>
+        
+    
+    
+ </div>
+
+ <div class="footer">
+    <h4>JOIN OUR NEWSLETTER</h4>
+    <div class="foot">
+        <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS HERE" id="mail">
+    </div>
+    <div class="social">
+        <p>INSTAGRAM</p>
+        <p>FACEBOOK</p>
+        <p>TWITTER</p>
+        <p>PINTREST</p>
+        <p>YOUTUBE</p>
+        <p>SPOTIFY</p>
+    </div>
+</div>
+
+<div class="last">
+    <div>
+        <h6>HELP</h6>
+        <p>MY ZARA ACCOUNT</p>
+        <p>ITEMS SIZES</p>
+        <p>GIFT OPTIONS</p>
+        <p>SHIPPING</p>
+        <p>PAYMENT AND INVOICES</p>
+        <p>MY PURCHASES</p>
+        <p>EXCHANGE, RETURN</p>
+        <p>ZARA EXPERIENCE</p>
+    </div>
+    <div>
+        <h6>FOLLOW US</h6>
+        <p>NEWSLETTER</p>
+        <p>INSTAGRAM</p>
+        <p>FACEBOOK</p>
+        <p>TWITTER</p>
+        <p>PINTREST</p>
+        <p>YOUTUBE</p>
+    </div>
+    <div>
+        <h6>COMPANY</h6>
+        <p>ABUT US</p>
+        <p>JOIN LIFE</p>
+        <p>OFFICES</p>
+        <p>STORES</p>
+        <p>WORK WITH US</p>
+    </div>
+    <div>
+        <h6>POLICES</h6>
+        <p>PRIVACY POLICIES</p>
+        <p>PURCHASE CONDITION</p>
+        <p>GIFT CARD OPTIONS</p>
+        <p>COOKIE SETTINGS</p>
+    </div>
+</div>
+ 
+</body>
+
+
+<script>
+   function onclickmenu(){
+
+document.getElementById('menu').classList.toggle('icon');
+document.getElementById('nav').classList.toggle('change');
+}
+
+   let incart1 = JSON.parse(localStorage.getItem('incart1'))
+    // console.log(incart1)
+
+let sum=0;
+        for(let i=0;i<incart1.length;i++){
+            sum+=incart1[i].price*incart1[i].quantity;
+        }
+    
+         document.getElementById("cart-total").textContent=sum;
+    
+let btn = document.getElementById('button')
+let logpage = JSON.parse(localStorage.getItem('logp'))
+
+let username = document.getElementById('username')
+
+for(let i=0; i<logpage.length; i++){
+            username.innerText = logpage[i]
+        }
+
+btn.addEventListener('click', ()=>{
+   
+    Swal.fire({
+  icon: 'success',
+  title: 'DATA SAVED SUCCESSFULLY',
+  text: 'HAVE A GREAT DAY',
+  footer: 'AUTOMATICALLY REDIRECTING TO PAYMENT PAGE IN 2 SEC.'
+
+  
+})
+
+
+    
+
+
+setTimeout(() => {
+            window.location.href="./payment.html"
+        }, 5000);
+
+})
+
+</script>
+</html>

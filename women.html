@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
    *{
     box-sizing: border-box;
@@ -204,7 +205,7 @@
     }
    
    .womendis img{
-        margin-top: 120px;
+        margin-top: 9px;
         width: 104.5%;
     }
     .womendis > div>div{
@@ -241,12 +242,16 @@
         width: 80%;
     }
     #middle > div p{
+        text-align: center;
         font-size: 10px;
     }#middle>div button{
         display: block;
-        background-color: aliceblue;
+       
         border: none;
         margin: auto;
+    }
+    #middle>div button:hover{
+        background-color: gray;
     }
     #showimg button{
         text-decoration: none;
@@ -259,6 +264,7 @@
         background: rgb(239, 241, 244);
     }
     #showimg >div p{
+        text-align: center;
         font-size: 12px;
     }
    
@@ -271,7 +277,7 @@
             display: grid;
             width: 100%;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4,1fr);
+            /* grid-template-rows: repeat(4,1fr); */
             gap: 30px 30px;
           
         }
@@ -387,6 +393,36 @@
         display: block;
         margin: auto;
     }
+    .bossfilter{
+        /* border: 1px solid blue; */
+        display: flex;
+        margin: auto;
+        align-items: end;
+        justify-content: center;
+    }
+    h4{
+        text-align: center;
+    }
+   
+    .filter{
+        margin-top: 112px;
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        /* position: fixed; */
+        /* border: 1px solid red; */
+        /* margin: auto; */
+    }
+    .filter select{
+        width: 100%;
+        height: 20px;
+        border-radius: 20px;
+        margin-left: 20px;
+        background-color: gray;
+        color: white;
+        outline: none;
+        border: none;
+    }
     </style>
      <!-- <div class="searchbar">
         <input type="text" placeholder="Serach" id="search"> 
@@ -479,12 +515,29 @@
             </div>
             
              <div class="help">
-                <a href="./login.html">LOGIN</a>
+                <a href="./login.html"><span  id="username"> LOGIN</span></a>
                 <a href="#">HELP</a>
                 <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>
              </div>
           </div>
     </div>
+<div class="bossfilter">
+    <div class="filter">
+        <select id="changeprice">
+            <option value="">PRICE</option>
+            <option value="high">High to Low</option>
+            <option value="low">Low to High</option>
+        </select>
+        <select id="changequaltiy">
+            <option value="">MATERIAL</option>
+            <option value="CAVA">CAVA</option>
+            <option value="PEARL MARL">PEARL MARL</option>
+            <option value="MULTICOLOURED">MULTICOLOURED</option>
+            <option value="ECRU">ECRU</option>
+        </select>
+    </div>
+</div>
+    
 
     <div class="womendis">
         <div>
@@ -601,6 +654,8 @@ document.getElementById('nav').classList.toggle('change');
         let res2 = await fetch(api2)
         let data2 = await res2.json()
         display2(data2)
+        checkprice2(data2)
+        changemat2(data2)
     }
 
     catch(error){
@@ -612,9 +667,9 @@ document.getElementById('nav').classList.toggle('change');
 
   function display2(data){
 
-
+mid.innerHTML = ''
     data.forEach((ele)=>{
-    //   ele.img
+    
         let parent = document.createElement('div')
 
         let img = document.createElement('img')
@@ -638,12 +693,23 @@ document.getElementById('nav').classList.toggle('change');
         btn.addEventListener('click', ()=>{
            
         if(check(ele)){
-            alert("Product Already in Cart");
+            Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'PRODUCT ALREADY IN CART',
+
+})
         }
         else{
             incart1.push({ ...ele, quantity: 1 });
             localStorage.setItem("incart1", JSON.stringify(incart1));
-            alert("Product Added To Cart");
+            Swal.fire({
+//   position: 'top-end',
+  icon: 'success',
+  title: 'PRODUCT ADDED TO CART',
+  showConfirmButton: false,
+  timer: 2000
+})
         }
 
         })
@@ -651,7 +717,9 @@ document.getElementById('nav').classList.toggle('change');
         parent.append(img,name,des,price, mat, btn)
         
         mid.append(parent)
-         })
+        
+        
+    })
   }
 
   
@@ -662,20 +730,19 @@ document.getElementById('nav').classList.toggle('change');
 
         let res = await fetch(api)
         let data = await res.json()
-        // console.log(data)
         display(data)
-        
-        total = data
-        // console.log(total)
+        checkprice(data)
+        changemat(data)
     }
 
     catch(error){
         console.log(error)
     }
   }
+ 
+function display(data){
 
-  function display(data){
-
+    show.innerHTML = ''
 
 data.forEach((elem)=>{
 
@@ -704,30 +771,144 @@ data.forEach((elem)=>{
     btn.addEventListener('click', ()=>{
         
         if(check(elem)){
-            alert("Product Already in Cart");
+            Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'PRODUCT ALREADY IN CART',
+
+})
         }
         else{
             incart1.push({ ...elem, quantity: 1 });
             localStorage.setItem("incart1", JSON.stringify(incart1));
-            alert("Product Added To Cart");
+            Swal.fire({
+//   position: 'top-end',
+  icon: 'success',
+  title: 'PRODUCT ADDED TO CART',
+  showConfirmButton: false,
+  timer: 2000
+})
         }
 
         })
 
-    parent.append(img,name,des,price, mat, btn)
+    parent.append(img,name,des,price, mat,btn)
     
    show.append(parent)
      })
 }
 
 
+
+
 function check(ele){
+
     for (let i = 0; i < incart1.length; i++) {
         if (Number(incart1[i].id) == Number(ele.id)) {
           return true;
         }
       }
       return false;
+}
+
+
+let logpage = JSON.parse(localStorage.getItem('logp'))
+
+let username = document.getElementById('username')
+
+for(let i=0; i<logpage.length; i++){
+            username.innerText = logpage[i]
+        }
+
+let pricechange = document.getElementById('changeprice')
+
+function checkprice(data){
+
+pricechange.addEventListener('change', ()=>{
+
+    if(pricechange.value==''){
+        display(data)
+      
+    }
+    else{
+        if(pricechange.value == 'high'){
+
+        data.sort((a,b)=> {if (Number(a.price) < Number(b.price)) {return 1} if(Number(b.price) < Number(a.price)) {return -1}})
+        
+        }
+        else if(pricechange.value == 'low'){
+
+        data.sort((a,b)=> {if (Number(a.price) > Number(b.price)) {return 1} if(Number(b.price) > Number(a.price)) {return -1}})
+        
+        }
+
+        display(data)
+        
+    }
+})
+}
+function checkprice2(data){
+
+pricechange.addEventListener('change', ()=>{
+
+    if(pricechange.value==''){
+        
+        display2(data)
+    }
+    else{
+        if(pricechange.value == 'high'){
+
+        
+        data.sort((a,b)=> {if (Number(a.price) < Number(b.price)) {return 1} if(Number(b.price) < Number(a.price)) {return -1}})
+        }
+        else if(pricechange.value == 'low'){
+
+        data.sort((a,b)=> {if (Number(a.price) > Number(b.price)) {return 1} if(Number(b.price) > Number(a.price)) {return -1}})
+        }
+
+       
+        display2(data)
+    }
+})
+}
+
+let mat = document.getElementById('changequaltiy')
+
+function changemat(data){
+
+  mat.addEventListener('change', ()=>{
+
+    if(mat.value==''){
+      display(data)
+    }
+    else{
+        let res = data.filter((ele)=>{
+
+return ele.material==mat.value
+})
+display(res)
+    }
+
+   
+  })
+}
+function changemat2(data){
+
+mat.addEventListener('change', ()=>{
+
+  if(mat.value==''){
+    display2(data)
+  }
+  else{
+    
+  let res = data.filter((ele)=>{
+
+return ele.material==mat.value
+})
+display2(res)
+  }
+
+})
 }
 </script>
 </html>

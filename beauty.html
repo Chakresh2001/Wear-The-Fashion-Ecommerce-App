@@ -202,66 +202,94 @@
         outline: none;
         border-bottom: 1px solid black;
     }
-    .mainlog{
-        width: 100%;
-        margin-top: 170px;
+    .oneimg{
+        margin-top: 120px;
         display: flex;
-        justify-content: space-around;
     }
-  
-    #mail{
+    .oneimg img{
+        width: 34.8%;
+    }
+    #one{
         margin-top: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    #two{
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+    }
+    #one img{
+        width: 31%;
+    }
+    #two img{
+        width: 31%;
+    }
+    #middleimg img{
+        margin-top: 70px;
+        width: 104.5%;
+    }
+    #downimg img{
+        margin-top: 70px;
+        width: 104.5%;
+    }
+    #middle>div{
         width: 100%;
-        border: none;
-        outline: none;
-        border-bottom: 1px solid black;
-    }#password{
-        margin-top: 50px;
+        /* border: 2px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #middle{
+        margin-top: 70px;
+        text-align: center;
+       margin-left: 30px;
+        display: grid;
         width: 100%;
-        border: none;
-        outline: none;
-        border-bottom: 1px solid black;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px 20px;
     }
-    #log{
-        
-        background-color: black;
-        color: white;
-        height: 32px;
+    #middle img{
         width: 100%;
-        display: block;
-        margin: auto;
     }
-    #log:hover{
-        cursor: pointer;
+    #mdown>div{
+        width: 100%;
+        /* border: 2px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     }
-    #login {
-        margin-top: 50px;
+    
+    #mdown{
+        margin-top: 70px;
+        text-align: center;
+       margin-left: 30px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px 20px;
     }
-  
-    #reg{
-        margin-top: 50px;
-        color: black;
-        background-color: white;
-        height: 32px;
-        width: 150%;
-        display: block;
-        margin: auto;
-
+    #mdown img{
+        width: 100%;
     }
-    #reg:hover{
-        background-color: black;
-        color: white;
+    #bdown>div{
+        width: 100%;
+        /* border: 2px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;    }
+    #bdown{
+        margin-top: 70px;
+        text-align: center;
+       margin-left: 30px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px 20px;
     }
-    .need button:hover{
-        cursor: pointer;
-        
+    #bdown img{
+        width: 100%;
     }
     .footer{
             margin-top: 400px;
         width: 50%;
     }
     #mail{
-        width: 100%;
+        width: 60%;
         border: none;
         outline: none;
         border-bottom: 1px solid black;
@@ -293,29 +321,73 @@
         display: block;
         margin: auto;
     }
-    
-    #admin{
+    #grid{
+        margin-left: 60px;
+        text-align: center;
         margin-top: 50px;
-        color: black;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 20px;
+    }
+    #grid >div{
+/* border: 1px solid red; */
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+    #grid img{
+        width: 100%;
+    }
+    #grid button{
+        outline: 0;
+        border: 0;
         background-color: white;
-        height: 32px;
-        width: 150%;
-        display: block;
-        margin: auto;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        color: gray;
+    }
+    #bdown button{
+
+        outline: 0;
+        border: 0;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        color: gray;
+    
+    }
+    #mdown button{
+        outline: 0;
+        border: 0;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        color: gray;
+    }
+    #middle button{
+        outline: 0;
+        border: 0;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        color: gray;
+    }
+    #middle p{
+font-size: 13px;
+    }
+    #mdown p{
+        font-size: 13px;
 
     }
-    #admin:hover{
-        background-color: black;
-        color: white;
+    #bdown p{
+        font-size: 13px;
+
     }
-    .adminpage button:hover{
-        cursor: pointer;
-        
-    }
-    .adminpage{
-        margin-top: 75px;
-        /* border: 1px solid red; */
-        width: 8%;
+    #grid p{
+        font-size: 13px;
+
     }
     </style>
 </head>
@@ -398,40 +470,57 @@
             </ul>
         </div>
          
-        <div class="logo" id="home"> <h1><a href="./home.html">ZARA</a></h1></div>
+        <div class="logo" id="home"> <h1 ><a href="./home.html">ZARA</a></h1></div>
             <div class="searchbar">
                 <input type="text" placeholder="Serach" id="search"> 
-                
+               
             </div>
             
              <div class="help">
                 <a href="./login.html"><span  id="username"> LOG IN</span></a>
                 <a href="#">HELP</a>
-                <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>             
-            </div>
+                <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>   
+             </div>
           </div>
     </div>
-   <div class="mainlog">
-        <div class="log">
-            <form>
-                <h3>LOG IN TO YOUR ACCOUNT</h3>
-                <div><input type="email" placeholder="E-MAIL" id="mail"></div>
-                <div><input type="password" placeholder="PASSWORD" id="password"></div>
-                <div id="login"> <input type="submit" value="LOG IN" id="log"></div>
-                <p >Have you forgotten your password?</p>
-            </form>
-        </div>
-        <div class="need">
-                <h3>NEED AN ACCOUNT?</h3>
-                <a href="./register.html" ><button id="reg">REGISTER</button></a>
-        </div>
 
-        <div class="adminpage">
-            <a href="./admin.html"><button id="admin">ADMIN ?</button></a>
-        </div>
+    <div class="oneimg">
+        <img src="https://static.zara.net/photos///2023/V/M/1/p/0000/002/000/2/w/632/0000002000_1_1_1.jpg?ts=1676457845947" alt="">
+        <img src="https://static.zara.net/photos///2023/V/M/1/p/0000/002/001/2/w/632/0000002001_1_1_1.jpg?ts=1676457846320" alt="error">
+        <img src="https://static.zara.net/photos///2023/V/M/1/p/0000/002/002/2/w/632/0000002002_1_1_1.jpg?ts=1676457845445" alt="">
+    </div>
+   <div id="one">
+    <img src="https://static.zara.net/photos///2023/V/M/1/p/0000/001/876/2/w/607/0000001876_1_1_1.jpg?ts=1676282546102" alt="">
+   </div>
+   <div id="two">
+    <img src="https://static.zara.net/photos///2023/V/M/1/p/0000/001/586/2/w/607/0000001586_1_1_1.jpg?ts=1675428342516" alt="">
    </div>
 
-   
+   <div id="middle">
+
+   </div>
+
+   <div id="middleimg">
+    <img src="https://static.zara.net/photos///2023/V/T/1/p/2414/050/250/2/w/1920/2414050250_9_1_1.jpg?ts=1674648860019" alt="error">
+   </div>
+
+   <div id="mdown">
+
+   </div>
+
+   <div id="downimg">
+    <img src="https://static.zara.net/photos///2023/V/T/1/p/2413/033/321/2/w/1922/2413033321_15_2_1.jpg?ts=1674060890772" alt="erro">
+   </div>
+
+   <div id="bdown">
+
+   </div>
+
+   <div id="grid">
+
+   </div>
+
+
 
    <div class="footer">
     <h4>JOIN OUR NEWSLETTER</h4>
@@ -446,9 +535,9 @@
         <p>YOUTUBE</p>
         <p>SPOTIFY</p>
     </div>
-</div>
+    </div>
 
-<div class="last">
+    <div class="last">
     <div>
         <h6>HELP</h6>
         <p>MY ZARA ACCOUNT</p>
@@ -484,7 +573,7 @@
         <p>GIFT CARD OPTIONS</p>
         <p>COOKIE SETTINGS</p>
     </div>
-</div>
+    </div>
 </body>
 
 <script>
@@ -493,136 +582,341 @@
 document.getElementById('menu').classList.toggle('icon');
 document.getElementById('nav').classList.toggle('change');
 }
- 
-let loginData = JSON.parse(localStorage.getItem('regdata'))
 
-let logpage = JSON.parse(localStorage.getItem('logp'))
-if(logpage==null){
-   logpage = []
-}
+let mid = document.getElementById('middle')
 
-let logform = document.querySelector('form')
-let logmail  = document.getElementById('mail')
-let logpass = document.getElementById('password')
-let user = document.getElementById('username')
+let midapi = `https://mocki.io/v1/7a06068f-d7de-4e87-89e0-e84f1d9884c8`
+
+let down = document.getElementById('mdown')
+
+let downapi = `https://mocki.io/v1/3a1fca4f-14fd-406d-9033-410185ce58c2`
+
+let bapi = `https://mocki.io/v1/85b3c199-9745-48bc-8493-e0736c576d71`
+
+let bdown = document.getElementById('bdown')
+
+let incart1 = JSON.parse(localStorage.getItem('incart1'))
+  if(incart1 == null){
+    incart1 = []
+  }
+
+datafetch()
+  async function datafetch(){
+
+    try{
+
+        let res = await fetch(midapi)
+        let data = await res.json()
+        display(data)
+        // console.log(data)
+        
+    }
+
+    catch(error){
+        console.log(error)
+    }
+  }
 
 
 
-logform.addEventListener('submit', (e)=>{
+function display(data){
 
-    e.preventDefault()
 
-    if(loginData.length===0){
+data.forEach((ele)=>{
+  ele.img
+    let parent = document.createElement('div')
 
-        Swal.fire({
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    let des = document.createElement('p')
+    des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    // let mat = document.createElement('p')
+    // mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+
+    btn.addEventListener('click', ()=>{
+       
+        if(check(ele)){
+            Swal.fire({
   icon: 'error',
   title: 'Oops...',
-  text: 'NOT REGISTERED',
+  text: 'PRODUCT ALREADY IN CART',
 
 })
-
     }
     else{
-
-    let a = false
-
-    for(let i=0; i<loginData.length; i++){
-
-        
-
-        if(loginData[i].mail == logmail.value && loginData[i].password == logpass.value){
-
-            a = true
-
-            logpage.push(loginData[i].name)
-            localStorage.setItem('logp', JSON.stringify(logpage))
-            break
-        }
-    }
-    if(a){
-        for(let i=0; i<logpage.length; i++){
-            username.innerText = logpage[i]
-        }
+        incart1.push({ ...ele, quantity: 1 });
+        localStorage.setItem("incart1", JSON.stringify(incart1));
         Swal.fire({
-  position: 'top-end',
+//   position: 'top-end',
   icon: 'success',
-  title: 'LOGIN SUCCESSFULL',
+  title: 'PRODUCT ADDED TO CART',
   showConfirmButton: false,
   timer: 2000
 })
-setTimeout(() => {
-            window.location.href="./home.html"
-        }, 2000);
     }
-    else{
-        username.innerText = 'LOG IN'
+
+    })
+    
+   
+    parent.append(img,name,des,price,btn)
+    
+    mid.append(parent)
+     })
+}
+
+
+datafetch2()
+  async function datafetch2(){
+
+    try{
+
+        let res2 = await fetch(downapi)
+        let data2 = await res2.json()
+        display2(data2)
+        
+       
+    }
+
+    catch(error){
+        console.log(error)
+    }
+  }
+  function display2(data){
+
+
+data.forEach((ele)=>{
+  ele.img
+    let parent = document.createElement('div')
+
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    // let des = document.createElement('p')
+    // des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    // let mat = document.createElement('p')
+    // mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+
+    btn.addEventListener('click', ()=>{
+       
+    if(check(ele)){
         Swal.fire({
   icon: 'error',
   title: 'Oops...',
-  text: 'WRONG CREDENTIALS',
+  text: 'PRODUCT ALREADY IN CART',
 
 })
-
     }
-}
-   
-})
-// logform.addEventListener('submit', (e)=>{
-//     e.preventDefault()
-//     let a = false
-
-// for(let i=0; i<logpage.length; i++){
-
-// for(let j=0; j<loginData.length; j++){
-
-// if(loginData[j].mail==logpage[i].mail){
-    
-//     if(loginData[j].password==logpage[i].password){
-       
-//         a = true
-//         break
-//     }
-   
-// }
-    
-// }
-
-
-// }
-
-// let username = document.getElementById('username')
-
-// for(let i=0; i<loginData.length; i++){
-
-//     if(a){
-
-//         username.innerText = loginData[i].name
-//         Swal.fire({
+    else{
+        incart1.push({ ...ele, quantity: 1 });
+        localStorage.setItem("incart1", JSON.stringify(incart1));
+        Swal.fire({
 //   position: 'top-end',
-//   icon: 'success',
-//   title: 'LOGIN SUCCESSFULL',
-//   showConfirmButton: false,
-//   timer: 1500
-// })
-//     }
+  icon: 'success',
+  title: 'PRODUCT ADDED TO CART',
+  showConfirmButton: false,
+  timer: 2000
+})
+    }
 
-//     else{
-
-//         username.innerText = 'LOG IN'
-//         Swal.fire({
-//   icon: 'error',
-//   title: 'Oops...',
-//   text: 'WRONG CREDENTIALS',
-
-// })
-//     }
-
-
-// }
-
-// })
-
+    })
    
 
+    parent.append(img,name,price, btn)
+    
+    down.append(parent)
+     })
+}
+
+datafetch3()
+  async function datafetch3(){
+
+    try{
+
+        let res3 = await fetch(bapi)
+        let data3 = await res3.json()
+        display3(data3)
+        
+        
+    }
+
+    catch(error){
+        console.log(error)
+    }
+  }
+
+  function display3(data){
+
+
+data.forEach((ele)=>{
+  ele.img
+    let parent = document.createElement('div')
+
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    // let des = document.createElement('p')
+    // des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    // let mat = document.createElement('p')
+    // mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+
+    btn.addEventListener('click', ()=>{
+       
+    if(check(ele)){
+        Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'PRODUCT ALREADY IN CART',
+
+})
+    }
+    else{
+        incart1.push({ ...ele, quantity: 1 });
+        localStorage.setItem("incart1", JSON.stringify(incart1));
+        Swal.fire({
+//   position: 'top-end',
+  icon: 'success',
+  title: 'PRODUCT ADDED TO CART',
+  showConfirmButton: false,
+  timer: 2000
+})
+    }
+
+    })
+
+
+    parent.append(img,name,price, btn)
+    
+    bdown.append(parent)
+     })
+}
+
+
+let grid = document.getElementById('grid');
+
+let gridapi = `https://mocki.io/v1/7bcde3ff-6026-4a38-ac17-beef8627c505`
+
+
+datafetch4()
+  async function datafetch4(){
+
+    try{
+
+        let res4 = await fetch(gridapi)
+        let data4 = await res4.json()
+        display4(data4)
+        console.log(data4)
+        
+    }
+
+    catch(error){
+        console.log(error)
+    }
+  }
+
+  function display4(data){
+
+
+data.forEach((ele)=>{
+  ele.img
+    let parent = document.createElement('div')
+
+    let img = document.createElement('img')
+    img.setAttribute('src', ele.img)
+
+    let name = document.createElement('h6')
+    name.innerText = ele.name
+
+    // let des = document.createElement('p')
+    // des.innerText = ele.desc
+
+    let price = document.createElement('p')
+    price.innerText = '$ '+ ele.price
+
+    // let mat = document.createElement('p')
+    // mat.innerText = ele.material
+
+    let btn = document.createElement('button')
+    btn.innerText = '+'
+
+    btn.addEventListener('click', ()=>{
+       
+    if(check(ele)){
+        Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'PRODUCT ALREADY IN CART',
+
+})
+    }
+    else{
+        incart1.push({ ...ele, quantity: 1 });
+        localStorage.setItem("incart1", JSON.stringify(incart1));
+        Swal.fire({
+//   position: 'top-end',
+  icon: 'success',
+  title: 'PRODUCT ADDED TO CART',
+  showConfirmButton: false,
+  timer: 2000
+})
+    }
+
+    })
+
+
+    parent.append(img,name,price, btn)
+    
+    grid.append(parent)
+     })
+}
+
+
+function check(ele){
+    for (let i = 0; i < incart1.length; i++) {
+        if (Number(incart1[i].bid) == Number(ele.bid)) {
+          return true;
+        }
+      }
+      return false;
+}
+
+
+let logpage = JSON.parse(localStorage.getItem('logp'))
+
+let username = document.getElementById('username')
+
+for(let i=0; i<logpage.length; i++){
+            username.innerText = logpage[i]
+        }
 </script>
 </html>

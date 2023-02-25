@@ -7,6 +7,7 @@
     <title>ZARA Wear The Fashion</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    
     <style>
         *{
     box-sizing: border-box;
@@ -181,7 +182,7 @@
     position: fixed;
     margin-bottom: 50px;
     top: 0;
-    background-color: white;
+    /* background-color: white; */
     }
     #home a{
         color: black;
@@ -256,6 +257,7 @@ border-bottom: 1px solid black;
     display: flex;
     justify-content: space-evenly;
     }
+    
     </style>
 </head>
 
@@ -336,7 +338,7 @@ border-bottom: 1px solid black;
             </div>
             
              <div class="help">
-                <a href="./login.html">LOGIN</a>
+                <a href="./login.html"><span  id="username"> LOGIN</span></a>
                 <a href="#">HELP</a>
                 <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>   
              </div>
@@ -348,12 +350,12 @@ border-bottom: 1px solid black;
             <a href="./women.html" > <img src="https://static.zara.net/photos///contents/mkt/spots/ss23-north-woman-accesories/subhome-xmedia-08//w/1920/IMAGE-landscape-fill-c956202f-59ea-4e33-b2e6-3250faaaf09b-default_0.jpg?ts=1676886624213" alt="Error" ></a>
         </div>
         <div class="imageslide">
-            <a href="./women.html"><img src="https://static.zara.net/photos///contents/mkt/spots/ss23-north-beauty-new/subhome-xmedia-08//w/1920/IMAGE-landscape-default-fill-bcd5eb99-a36c-4fe0-841e-645fa1a33b93-default_0.jpg?ts=1676900543861" alt="Error"></a>
+            <a href="./women.html"><img src="https://static.zara.net/photos///contents/mkt/spots/ss23-beauty-join-life/subhome-xmedia-08//w/1920/IMAGE-landscape-default-fill-df311ab5-8e92-484c-b194-bd3ee53377a3-default_0.jpg?ts=1677145308068" alt="Error"></a>
             
         </div>
         <div class="imageslide">
             
-            <a href="./women.html"><img src="https://static.zara.net/photos///contents/mkt/spots/ss23-north-woman-accesories/subhome-xmedia-08//w/1920/IMAGE-landscape-fill-c956202f-59ea-4e33-b2e6-3250faaaf09b-default_0.jpg?ts=1676886624213" alt="Error"></a>
+            <a href="./women.html"><img src="https://static.zara.net/photos///contents/mkt/spots/ss23-north-beauty-new/subhome-xmedia-08//w/1920/IMAGE-landscape-default-fill-bcd5eb99-a36c-4fe0-841e-645fa1a33b93-default_0.jpg?ts=1676900543861" alt="Error"></a>
         </div>
         <div class="imageslide">
             
@@ -425,7 +427,14 @@ document.getElementById('menu').classList.toggle('icon');
 document.getElementById('nav').classList.toggle('change');
 }
 
+ 
+let logpage = JSON.parse(localStorage.getItem('logp'))
 
+let username = document.getElementById('username')
+
+for(let i=0; i<logpage.length; i++){
+            username.innerText = logpage[i]
+        }
 
 </script>
 </html>

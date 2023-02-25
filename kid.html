@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif|Sulphur+Point&display=swap">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         *{
     box-sizing: border-box;
@@ -178,6 +179,7 @@
     position: fixed;
     margin-bottom: 50px;
     background-color: white;
+    top: 0;
     }
     #home a{
         color: black;
@@ -210,7 +212,7 @@ border-bottom: 1px solid black;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
     .kidimg img{
-        margin-top: 109px;
+        margin-top: 8px;
         
     }
     .kidimg{
@@ -219,14 +221,16 @@ border-bottom: 1px solid black;
     }
     .onegirl{
         margin-top: 50px;
-       
+       margin: auto;
     }
     .onegirl img{
         width: 65%;
     }
     .onegirl >div {
        margin-left: 31%;
+       
     }
+  
     #girlage{
        margin-left: 222px;
     }
@@ -432,11 +436,86 @@ border-bottom: 1px solid black;
         display: block;
         margin: auto;
     }
-    
+    .bossfilter{
+        /* border: 1px solid blue; */
+        display: flex;
+        margin: auto;
+        align-items: end;
+        justify-content: center;
+    }
+   
+    .filter{
+        margin-top: 112px;
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        /* position: fixed; */
+        /* border: 1px solid red; */
+        /* margin: auto; */
+    }
+    .filter select{
+        width: 100%;
+        height: 20px;
+        border-radius: 20px;
+        margin-left: 20px;
+        background-color: gray;
+        color: white;
+        outline: none;
+        border: none;
+    }
+    @media only screen and (min-width: 500px) and (max-width: 1200px) {
+            .kidimg{
+                display: none;
+                
+            }
+            .onegirl{
+                margin: auto;
+            }
+            #girldata{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .searchbar{
+                display: none;
+            }
+            .oneboy{
+                margin: auto;
+            }
+            #boydata{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                /* grid-template-rows: repeat(4, 1fr); */
+            }
+        }
+        /* mobile Screen */
+        @media only screen and (max-width: 500px){
+            .kidimg{
+                display: none;
+                
+            }
+            .onegirl{
+                margin: auto;
+            }
+            #girldata{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .searchbar{
+                display: none;
+            }
+            .oneboy{
+                margin: auto;
+            }
+            #boydata{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                /* grid-template-rows: repeat(10, 1fr); */
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="mainbar">
+   
     <div class="navbar1">
         <div id="navigation">
             <div id="menu" onclick="onclickmenu()">
@@ -511,7 +590,7 @@ border-bottom: 1px solid black;
            
              
              <div class="help">
-                <a href="./login.html">LOGIN</a>
+                <a href="#"><span  id="username"> LOG IN</span></a>
                 <a href="#">HELP</a>
                 <a href="./cart.html"><i class='fa fa-shopping-bag' id="cart"></i></a>   
              </div>
@@ -520,14 +599,37 @@ border-bottom: 1px solid black;
         </div>
 
     </div>
+<div class="bossfilter">
+    <div class="filter">
+        <select id="changeprice">
+            <option value="PRICE">PRICE</option>
+            <option value="high">High to Low</option>
+            <option value="low">Low to High</option>
+        </select>
+        <select id="changequaltiy">
+            <option value="">MATERIAL</option>
+            <option value="COTTON">COTTON</option>
+            <option value="DENIM">DENIM</option>
+            
+            <option value="LEATHER">LEATHER</option>
+            <option value="WOOLEN">WOOLEN</option>
+        </select>
+    </div>
    
-      
 </div>
+    
+      
+
+
+
     
     <div class="kidimg">
         <img src="https://static.zara.net/photos///2023/V/M/3/p/0000/002/127/2/w/725/0000002127_15_1_1.jpg?ts=1676883054931" alt="" id="girl">
         <img src="https://static.zara.net/photos///2023/V/0/3/p/1213/667/506/302/w/608/1213667506_15_1_1.jpg?ts=1675942535057" alt="" id="boy">
     </div>
+
+
+
 
     <div class="onegirl">
 
@@ -539,9 +641,9 @@ border-bottom: 1px solid black;
 
     </div>
 
-    <div id="girldata">
+     <div id="girldata">
 
-    </div>
+    </div> 
 
     <div class="oneboy">
 
@@ -643,6 +745,10 @@ try{
     let data = await res.json()
     console.log(data)
     display2(data)
+    checkprice(data)
+    // changequal(data)
+    changemat2(data)
+    
 }
 
 catch(error){
@@ -651,7 +757,7 @@ catch(error){
 }
 
 function display2(data){
-
+girldata.innerHTML = ''
 
 data.forEach((ele)=>{
 
@@ -677,12 +783,23 @@ data.forEach((ele)=>{
 
     btn.addEventListener('click', ()=>{
         if(check(ele)){
-            alert("Product Already in Cart");
+            Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'PRODUCT ALREADY IN CART',
+
+})
         }
         else{
             incart1.push({...ele, quantity:1});
             localStorage.setItem("incart1", JSON.stringify(incart1));
-            alert("Product Added To Cart");
+            Swal.fire({
+//   position: 'top-end',
+  icon: 'success',
+  title: 'PRODUCT ADDED TO CART',
+  showConfirmButton: false,
+  timer: 2000
+})
         }
 
     })
@@ -706,6 +823,8 @@ datafetch2()
         // display2(data2)
         display(data2)
         // console.log(data2)
+        checkprice2(data2)
+        changemat(data2)
     }
 
     catch(error){
@@ -717,9 +836,9 @@ datafetch2()
 
   function display(data){
 
-
+boydata.innerHTML = ''
 data.forEach((ele)=>{
-//   ele.img
+
     let parent = document.createElement('div')
 
     let img = document.createElement('img')
@@ -742,12 +861,23 @@ data.forEach((ele)=>{
 
     btn.addEventListener('click', ()=>{
         if(check(ele)){
-            alert("Product Already in Cart");
+            Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'PRODUCT ALREADY IN CART',
+
+})
         }
         else{
             incart1.push({...ele, quantity:1});
             localStorage.setItem("incart1", JSON.stringify(incart1));
-            alert("Product Added To Cart");
+            Swal.fire({
+//   position: 'top-end',
+  icon: 'success',
+  title: 'PRODUCT ADDED TO CART',
+  showConfirmButton: false,
+  timer: 2000
+})
         }
 
     })
@@ -766,6 +896,113 @@ function check(ele){
       }
       return false;
 }
+
+let pricechange = document.getElementById('changeprice')
+
+function checkprice(data){
+
+pricechange.addEventListener('change', ()=>{
+
+    if(pricechange.value=='PRICE'){
+        // display2(data)
+        display2(data)
+        
+    }
+    else{
+        if(pricechange.value == 'high'){
+
+        data.sort((a,b)=> {if (Number(a.price) < Number(b.price)) {return 1} if(Number(b.price) < Number(a.price)) {return -1}})
+        
+        }
+        else if(pricechange.value == 'low'){
+
+        data.sort((a,b)=> {if (Number(a.price) > Number(b.price)) {return 1} if(Number(b.price) > Number(a.price)) {return -1}})
+        
+        }
+
+        display2(data)
+        
+       
+    }
+})
+}
+
+
+function checkprice2(data){
+
+pricechange.addEventListener('change', ()=>{
+
+    if(pricechange.value=='PRICE'){
+        // display2(data)
+        display(data)
+        
+    }
+    else{
+        if(pricechange.value == 'high'){
+
+        data.sort((a,b)=> {if (Number(a.price) < Number(b.price)) {return 1} if(Number(b.price) < Number(a.price)) {return -1}})
+        
+        }
+        else if(pricechange.value == 'low'){
+
+        data.sort((a,b)=> {if (Number(a.price) > Number(b.price)) {return 1} if(Number(b.price) > Number(a.price)) {return -1}})
+        
+        }
+
+        
+        display(data)
+       
+    }
+})
+}
+
+let logpage = JSON.parse(localStorage.getItem('logp'))
+
+let username = document.getElementById('username')
+
+for(let i=0; i<logpage.length; i++){
+            username.innerText = logpage[i]
+        }
+
+
+        let mat = document.getElementById('changequaltiy')
+
+function changemat(data){
+
+  mat.addEventListener('change', ()=>{
+
+    if(mat.value==''){
+      display(data)
+    }
+    else{
+        let res = data.filter((ele)=>{
+
+return ele.material===mat.value
+})
+display(res)
+    }
+
+    
+  })
+}
+function changemat2(data){
+
+mat.addEventListener('change', ()=>{
+
+  if(mat.value==''){
+    display2(data)
+  }
+  else{
+    let res = data.filter((ele)=>{
+
+return ele.material===mat.value
+})
+display2(res)
+  }
+
   
+})
+}
 </script>
 </html>
+
