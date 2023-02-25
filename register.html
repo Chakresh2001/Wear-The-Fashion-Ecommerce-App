@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet"> -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         *{
     box-sizing: border-box;
@@ -469,7 +470,7 @@
             </div>
             
              <div class="help">
-                <a href="./login.html">LOG IN</a>
+                <a href="./login.html"><span  id="username"> LOG IN</span></a>
                 <a href="#">HELP</a>
                 <i class='fa fa-shopping-bag' id="cart"></i>   
              </div>
@@ -616,6 +617,13 @@
    </body>
 
 <script>
+
+function onclickmenu(){
+
+document.getElementById('menu').classList.toggle('icon');
+document.getElementById('nav').classList.toggle('change');
+}
+
     
 let loginData = JSON.parse(localStorage.getItem('regdata'))
 if(loginData==null){
@@ -644,9 +652,17 @@ let loginform =
 
 loginData.push(loginform)
 localStorage.setItem('regdata', JSON.stringify(loginData))
-alert('account created')
+Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Account Created',
+  showConfirmButton: false,
+  timer: 1500
 })
-
+        setTimeout(() => {
+            window.location.href="./login.html"
+        }, 2000);
+})
 
 
 </script>
