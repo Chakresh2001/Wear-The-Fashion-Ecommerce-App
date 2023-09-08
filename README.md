@@ -48,4 +48,4 @@ Place s: The checkout process allows users to place orders and track their statu
 ![zarapayment](https://github.com/Chakresh2001/few-quilt-3078/assets/120241122/d61c88e1-a410-4d9c-b034-f683368d0cd1)
 
 
-
+## Deployed Link :- https://preeminent-manatee-128f81.netlify.app/
