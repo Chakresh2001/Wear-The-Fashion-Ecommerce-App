@@ -8,13 +8,18 @@ This is an individual Project constructed within 5 days of time span.
 
 ## FUNCTIONALITIES :-
 
-
 User Login
+
 User Register
+
 Product Page
+
 Single Product Page
+
 Cart Page
+
 Filter Products on Category
+
 WishList Page
 
 ## Project Overview
